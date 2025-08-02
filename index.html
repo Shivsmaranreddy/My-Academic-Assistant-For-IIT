@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Angles Analysis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMckCKLSoHcVHrEPsAnTQSAnMLceLaj8NNApM9NdXPHzOXBIe" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        .katex {
+            font-size: 1.1em;
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        .nav-btn.active {
+            border-bottom-color: #3b82f6; /* Blue-500 */
+            color: #1e3a8a; /* Blue-800 */
+            font-weight: 600;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .solution-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+        .solution-content {
+            display: none;
+            border-left: 3px solid #3b82f6;
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Compound Angles</h1>
+            <p class="text-lg text-gray-600 mt-2">A Complete Analysis and Study Guide</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bg-white rounded-lg shadow-md p-2 mb-8 sticky top-2 z-10">
+            <ul class="flex flex-wrap justify-center items-center gap-2 md:gap-6">
+                <li><button class="nav-btn active py-2 px-4 text-gray-600 hover:text-blue-600" onclick="showSection('questions')">Question Bank</button></li>
+                <li><button class="nav-btn py-2 px-4 text-gray-600 hover:text-blue-600" onclick="showSection('solutions')">Solutions</button></li>
+                <li><button class="nav-btn py-2 px-4 text-gray-600 hover:text-blue-600" onclick="showSection('formulae')">Formulae</button></li>
+                <li><button class="nav-btn py-2 px-4 text-gray-600 hover:text-blue-600" onclick="showSection('patterns')">Problem Patterns</button></li>
+                <li><button class="nav-btn py-2 px-4 text-gray-600 hover:text-blue-600" onclick="showSection('prerequisites')">Prerequisites</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Section: Question Bank -->
+            <section id="questions" class="content-section active">
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">Question Bank (1-25)</h2>
+                    <div class="space-y-6">
+                        <!-- Questions will be dynamically rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Solutions -->
+            <section id="solutions" class="content-section">
+                 <div class="card">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">Solutions (1-25)</h2>
+                    <div class="space-y-6">
+                        <!-- Solutions will be dynamically rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Formulae -->
+            <section id="formulae" class="content-section">
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">Formulae Required</h2>
+                    <div id="formulae-content" class="space-y-6">
+                        <!-- Formulae will be dynamically rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Problem Patterns -->
+            <section id="patterns" class="content-section">
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">Problem Patterns & Classification</h2>
+                    <div id="patterns-content" class="space-y-6">
+                        <!-- Patterns will be dynamically rendered here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Prerequisites -->
+            <section id="prerequisites" class="content-section">
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-700">Prerequisite Information</h2>
+                    <div id="prerequisites-content" class="prose max-w-none">
+                        <p class="mb-4">To effectively solve the problems in this module, a solid understanding of the following foundational concepts is essential:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Basic Trigonometric Ratios:</strong> Definition of sine, cosine, tangent, cotangent, secant, and cosecant in a right-angled triangle.</li>
+                            <li><strong>Trigonometric Ratios for Standard Angles:</strong> Values of trigonometric functions for $0^\circ, 30^\circ, 45^\circ, 60^\circ, 90^\circ$.</li>
+                            <li><strong>Quadrant System (ASTC Rule):</strong> Signs of trigonometric functions in the four quadrants and the concept of allied angles (e.g., $90^\circ \pm \theta$, $180^\circ \pm \theta$).</li>
+                            <li><strong>Fundamental Trigonometric Identities:</strong>
+                                <ul>
+                                    <li>$\sin^2\theta + \cos^2\theta = 1$</li>
+                                    <li>$1 + \tan^2\theta = \sec^2\theta$</li>
+                                    <li>$1 + \cot^2\theta = \csc^2\theta$</li>
+                                </ul>
+                            </li>
+                            <li><strong>Algebraic Manipulation:</strong> Proficiency in simplifying expressions, solving equations, and using techniques like componendo and dividendo.</li>
+                            <li><strong>Triangle Properties:</strong> Basic properties of triangles, such as the sum of angles being $180^\circ$ ($\pi$ radians).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // --- DATABASE ---
+        const questionData = [
+            {
+                id: 1,
+                type: 'Assertion-Reason',
+                question: "<strong>Assertion (A):</strong> $tan~40^{\\circ}+tan~80^{\\circ}-\\sqrt{3}tan~40^{\\circ}tan~80^{\\circ}=-\\sqrt{3}$ <br> <strong>Reason (R):</strong> $tan(A+B)=tan~A+tan~B+tan(A+B)tan~A~tan~B$",
+                solution: `<p><strong>Analysis of Assertion (A):</strong></p><p>We know the identity for $tan(A+B)$:$$ tan(A+B) = \\frac{tanA + tanB}{1 - tanA tanB} $$Let $A = 40^\\circ$ and $B = 80^\\circ$. Then $A+B = 120^\\circ$.<br>Substituting these values into the identity:$$ tan(120^\\circ) = \\frac{tan40^\\circ + tan80^\\circ}{1 - tan40^\\circ tan80^\\circ} $$We know that $tan(120^\\circ) = tan(180^\\circ - 60^\\circ) = -tan(60^\\circ) = -\\sqrt{3}$.$$ -\\sqrt{3} = \\frac{tan40^\\circ + tan80^\\circ}{1 - tan40^\\circ tan80^\\circ} $$Now, cross-multiply:$$ -\\sqrt{3}(1 - tan40^\\circ tan80^\\circ) = tan40^\\circ + tan80^\\circ $$$$ -\\sqrt{3} + \\sqrt{3}tan40^\\circ tan80^\\circ = tan40^\\circ + tan80^\\circ $$Rearranging the terms to match the assertion:$$ tan40^\\circ + tan80^\\circ - \\sqrt{3}tan40^\\circ tan80^\\circ = -\\sqrt{3} $$Thus, <strong>Assertion (A) is true.</strong></p><p class='mt-4'><strong>Analysis of Reason (R):</strong></p><p>The given reason is $tan(A+B)=tan~A+tan~B+tan(A+B)tan~A~tan~B$.<br>Let's check this. From the standard identity, we have:$$ tan(A+B)(1 - tanA tanB) = tanA + tanB $$$$ tan(A+B) - tan(A+B)tanA tanB = tanA + tanB $$This is not the same as the statement given in Reason (R). Thus, <strong>Reason (R) is false.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> A is true, but R is false. The correct option is (3).</p>`,
+                formulae: ['tan(A+B)', 'Allied Angles'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 2,
+                type: 'Match the Following',
+                question: `Match List-I with List-II:<table class="w-full mt-2 border"><tr class="bg-gray-100"><th class="p-2 border">List-I</th><th class="p-2 border">List-II</th></tr><tr><td class="p-2 border">1. $cot(\\frac{\\pi}{4}+\\theta) \\cdot cot(\\frac{\\pi}{4}-\\theta)$</td><td class="p-2 border">a. 0</td></tr><tr><td class="p-2 border">2. $sin(45^{\\circ}+\\theta)-cos(45^{\\circ}-\\theta)$</td><td class="p-2 border">b. $tan~56^{\\circ}$</td></tr><tr><td class="p-2 border">3. $\\frac{cos11^{0}+sin~11^{0}}{cos11^{0}-sin~11^{0}}$</td><td class="p-2 border">c. $\\frac{\\sqrt{3}}{2}$</td></tr><tr><td class="p-2 border">4. $sin^{2}75^{0}-sin^{2}15^{0}$</td><td class="p-2 border">d. 1</td></tr></table>`,
+                solution: `<p><strong>1. $cot(\\frac{\\pi}{4}+\\theta) \\cdot cot(\\frac{\\pi}{4}-\\theta)$</strong></p><p>We use the identity $tan(\\frac{\\pi}{4}-\\theta) = cot(\\frac{\\pi}{4}+\\theta)$. Therefore, $cot(\\frac{\\pi}{4}-\\theta) = tan(\\frac{\\pi}{4}+\\theta)$.<br>$$ cot(\\frac{\\pi}{4}+\\theta) \\cdot tan(\\frac{\\pi}{4}+\\theta) = 1 $$So, <strong>1 matches with (d).</strong></p><p class="mt-4"><strong>2. $sin(45^{\\circ}+\\theta)-cos(45^{\\circ}-\\theta)$</strong></p><p>Using the allied angle identity $cos(A) = sin(90^\\circ - A)$.<br>$cos(45^\\circ - \\theta) = sin(90^\\circ - (45^\\circ - \\theta)) = sin(45^\\circ + \\theta)$.$$ sin(45^{\\circ}+\\theta) - sin(45^{\\circ}+\\theta) = 0 $$So, <strong>2 matches with (a).</strong></p><p class="mt-4"><strong>3. $\\frac{cos11^{0}+sin~11^{0}}{cos11^{0}-sin~11^{0}}$</strong></p><p>Divide numerator and denominator by $cos11^\\circ$:$$ \\frac{1+tan11^\\circ}{1-tan11^\\circ} = \\frac{tan45^\\circ+tan11^\\circ}{1-tan45^\\circ tan11^\\circ} = tan(45^\\circ+11^\\circ) = tan(56^\\circ) $$So, <strong>3 matches with (b).</strong></p><p class="mt-4"><strong>4. $sin^{2}75^{0}-sin^{2}15^{0}$</strong></p><p>Using the identity $sin^2A - sin^2B = sin(A+B)sin(A-B)$:$$ sin^2(75^\\circ) - sin^2(15^\\circ) = sin(75^\\circ+15^\\circ)sin(75^\\circ-15^\\circ) = sin(90^\\circ)sin(60^\\circ) = 1 \\cdot \\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{3}}{2} $$So, <strong>4 matches with (c).</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The correct matching is 1-d, 2-a, 3-b, 4-c. This corresponds to option (1).</p>`,
+                formulae: ['tan(A+B)', 'sin(A+B)sin(A-B)', 'Allied Angles'],
+                pattern: 'Match the Following'
+            },
+            {
+                id: 3,
+                type: 'Statement Analysis',
+                question: `<strong>Statement (I):</strong> If $0<\\alpha, \\beta<\\frac{\\pi}{4}$, $sin\\alpha=\\frac{a}{\\sqrt{1+a^{2}}}$, $cos\\beta=\\frac{b}{\\sqrt{1+b^{2}}}$ then $tan(\\alpha+\\beta)=\\frac{a+b}{a-b}$<br><strong>Statement (II):</strong> If $tan(A+B)=m, tan(A-B)=n$ then $tan2B=\\frac{m-n}{1+mn}$`,
+                solution: `<p><strong>Analysis of Statement (I):</strong></p><p>From $sin\\alpha=\\frac{a}{\\sqrt{1+a^{2}}}$, we can form a right triangle with opposite side 'a' and hypotenuse $\\sqrt{1+a^2}$. The adjacent side is $\\sqrt{(\\sqrt{1+a^2})^2 - a^2} = \\sqrt{1+a^2-a^2} = 1$. So, $tan\\alpha = a/1 = a$.<br>From $cos\\beta=\\frac{b}{\\sqrt{1+b^{2}}}$, we have adjacent side 'b' and hypotenuse $\\sqrt{1+b^2}$. The opposite side is $\\sqrt{(\\sqrt{1+b^2})^2 - b^2} = 1$. So, $tan\\beta = 1/b$.<br>Now, calculate $tan(\\alpha+\\beta)$:$$ tan(\\alpha+\\beta) = \\frac{tan\\alpha+tan\\beta}{1-tan\\alpha tan\\beta} = \\frac{a + 1/b}{1 - a(1/b)} = \\frac{\\frac{ab+1}{b}}{\\frac{b-a}{b}} = \\frac{ab+1}{b-a} $$The statement says the result is $\\frac{a+b}{a-b}$. This is not equal to our derived result. Thus, <strong>Statement (I) is false.</strong></p><p class='mt-4'><strong>Analysis of Statement (II):</strong></p><p>We can write $2B$ as $(A+B) - (A-B)$.<br>$$ tan(2B) = tan((A+B) - (A-B)) = \\frac{tan(A+B) - tan(A-B)}{1 + tan(A+B)tan(A-B)} $$Substituting $tan(A+B)=m$ and $tan(A-B)=n$:$$ tan(2B) = \\frac{m-n}{1+mn} $$Thus, <strong>Statement (II) is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Only Statement II is true. This corresponds to option (2).</p>`,
+                formulae: ['tan(A+B)', 'tan(A-B)', 'Trigonometric Ratios from Right Triangle'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 4,
+                type: 'Ordering',
+                question: "If $A=\\frac{cos~9^{0}-sin~9^{0}}{cos~9^{0}+sin~9^{0}}$, $B=\\frac{cos~21^{0}+sin~21^{0}}{cos~21^{0}-sin~21^{0}}$ and $C=tan~20^{\\circ}+tan~40^{\\circ}+\\sqrt{3}tan~20^{\\circ}tan~40^{\\circ}$, then find the descending order.",
+                solution: `<p><strong>Simplifying A:</strong></p><p>Divide numerator and denominator by $cos9^\\circ$:$$ A = \\frac{1 - tan9^\\circ}{1 + tan9^\\circ} = tan(45^\\circ - 9^\\circ) = tan(36^\\circ) $$</p><p class='mt-4'><strong>Simplifying B:</strong></p><p>Divide numerator and denominator by $cos21^\\circ$:$$ B = \\frac{1 + tan21^\\circ}{1 - tan21^\\circ} = tan(45^\\circ + 21^\\circ) = tan(66^\\circ) $$</p><p class='mt-4'><strong>Simplifying C:</strong></p><p>Let's analyze the expression for C. It relates to $tan(20^\\circ+40^\\circ)=tan(60^\\circ)=\\sqrt{3}$.$$ \\sqrt{3} = \\frac{tan20^\\circ+tan40^\\circ}{1-tan20^\\circ tan40^\\circ} \\implies \\sqrt{3}(1-tan20^\\circ tan40^\\circ) = tan20^\\circ+tan40^\\circ $$$$ \\sqrt{3} - \\sqrt{3}tan20^\\circ tan40^\\circ = tan20^\\circ+tan40^\\circ $$Rearranging gives $tan20^\\circ+tan40^\\circ+\\sqrt{3}tan20^\\circ tan40^\\circ = \\sqrt{3}$. So, $C=\\sqrt{3}$.<br>We know $\\sqrt{3} \\approx 1.732$, which is $tan(60^\\circ)$.</p><p class='mt-4'><strong>Comparison:</strong></p><p>We have $A = tan(36^\\circ)$, $B = tan(66^\\circ)$, and $C = tan(60^\\circ)$.<br>In the first quadrant ($0^\\circ$ to $90^\\circ$), the tangent function is increasing.<br>Therefore, $tan(36^\\circ) < tan(60^\\circ) < tan(66^\\circ)$, which means $A < C < B$.<br>The descending order is $B, C, A$.</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The correct option is (2) B, C, A.</p>`,
+                formulae: ['tan(A+B)', 'tan(A-B)'],
+                pattern: 'Value Comparison'
+            },
+            {
+                id: 5,
+                type: 'Statement Analysis',
+                question: "<strong>Statement I:</strong> If $x~cos~\\theta=y~cos(120^{\\circ}+\\theta)=z~cos(\\theta+240^{\\circ})$ then $xy+yz+zx=0$<br><strong>Statement II:</strong> If $cos~\\alpha+cos(120^{\\circ}+\\alpha)+cos(120^{\\circ}-\\alpha)=0$ Then which of the above statements is correct?",
+                solution: `<p><strong>Analysis of Statement II (Foundation):</strong></p><p>Let's evaluate the expression in Statement II first, as it's a standard identity. We use $cos(A+B)+cos(A-B) = 2cosAcosB$.$$ cos\\alpha + [cos(120^\\circ+\\alpha)+cos(120^\\circ-\\alpha)] = cos\\alpha + 2cos(120^\\circ)cos(\\alpha) $$Since $cos(120^\\circ) = -1/2$:$$ = cos\\alpha + 2(-\\frac{1}{2})cos\\alpha = cos\\alpha - cos\\alpha = 0 $$So, <strong>Statement II is true.</strong></p><p class='mt-4'><strong>Analysis of Statement I:</strong></p><p>Let $x~cos~\\theta=y~cos(120^{\\circ}+\\theta)=z~cos(\\theta+240^{\\circ}) = k$.<br>Then $\\frac{1}{x} = \\frac{cos\\theta}{k}$, $\\frac{1}{y} = \\frac{cos(120^\\circ+\\theta)}{k}$, $\\frac{1}{z} = \\frac{cos(240^\\circ+\\theta)}{k}$.<br>Let's sum these reciprocals:$$ \\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} = \\frac{1}{k}[cos\\theta + cos(120^\\circ+\\theta) + cos(240^\\circ+\\theta)] $$Note that $cos(240^\\circ+\\theta) = cos(360^\\circ - 120^\\circ + \\theta) = cos(-(120^\\circ-\\theta)) = cos(120^\\circ-\\theta)$.<br>The expression in the bracket becomes $cos\\theta + cos(120^\\circ+\\theta) + cos(120^\\circ-\\theta)$, which we proved is 0 in Statement II (with $\\alpha=\\theta$).<br>So, $\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z} = 0$.<br>Taking a common denominator:$$ \\frac{yz+xz+xy}{xyz} = 0 \\implies xy+yz+zx=0 $$Thus, <strong>Statement I is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Both I and II are true. This corresponds to option (3).</p>`,
+                formulae: ['cos(A+B)+cos(A-B)'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 6,
+                type: 'Statement Analysis',
+                question: `<strong>Statement (I):</strong> If $sin\\alpha=\\frac{12}{13} (0<\\alpha<\\frac{\\pi}{2})$ and $cos\\beta=-\\frac{3}{5} (\\pi<\\beta<\\frac{3\\pi}{2})$, then $sin(\\alpha+\\beta)=\\frac{56}{65}$.<br><strong>Statement (II):</strong> If $\\theta$ and $\\phi$ are angles in the first quadrant such that $tan\\theta=\\frac{1}{7}$ and $sin\\phi=\\frac{1}{\\sqrt{10}}$, then $\\theta+2\\phi=45^\\circ$.`,
+                solution: `<p><strong>Analysis of Statement (I):</strong></p><p>Given $sin\\alpha=\\frac{12}{13}$ and $\\alpha$ is in Q1. So, $cos\\alpha = \\sqrt{1 - (12/13)^2} = \\sqrt{25/169} = 5/13$.<br>Given $cos\\beta=-\\frac{3}{5}$ and $\\beta$ is in Q3. So, $sin\\beta = -\\sqrt{1 - (-3/5)^2} = -\\sqrt{16/25} = -4/5$.<br>Now, calculate $sin(\\alpha+\\beta)$:$$ sin(\\alpha+\\beta) = sin\\alpha cos\\beta + cos\\alpha sin\\beta $$$$ = (\\frac{12}{13})(-\\frac{3}{5}) + (\\frac{5}{13})(-\\frac{4}{5}) = -\\frac{36}{65} - \\frac{20}{65} = -\\frac{56}{65} $$The statement says the result is $\\frac{56}{65}$. This is incorrect. Thus, <strong>Statement (I) is false.</strong></p><p class='mt-4'><strong>Analysis of Statement (II):</strong></p><p>Given $tan\\theta = 1/7$ ($\theta$ in Q1).<br>Given $sin\\phi = 1/\\sqrt{10}$ ($\phi$ in Q1). Then $cos\\phi = \\sqrt{1 - (1/\\sqrt{10})^2} = \\sqrt{9/10} = 3/\\sqrt{10}$. So, $tan\\phi = (1/\\sqrt{10}) / (3/\\sqrt{10}) = 1/3$.<br>We need to evaluate $\\theta+2\\phi$. Let's find $tan(\\theta+2\\phi)$. First, find $tan(2\\phi)$:$$ tan(2\\phi) = \\frac{2tan\\phi}{1-tan^2\\phi} = \\frac{2(1/3)}{1-(1/3)^2} = \\frac{2/3}{1-1/9} = \\frac{2/3}{8/9} = \\frac{2}{3} \\cdot \\frac{9}{8} = \\frac{3}{4} $$Now find $tan(\\theta+2\\phi)$:$$ tan(\\theta+2\\phi) = \\frac{tan\\theta + tan(2\\phi)}{1 - tan\\theta tan(2\\phi)} = \\frac{1/7 + 3/4}{1 - (1/7)(3/4)} = \\frac{\\frac{4+21}{28}}{1 - 3/28} = \\frac{25/28}{25/28} = 1 $$Since $tan(\\theta+2\\phi) = 1$, and both $\\theta$ and $2\\phi$ are acute, $\\theta+2\\phi = 45^\\circ$. Thus, <strong>Statement (II) is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Only Statement II is true. This corresponds to option (2).</p>`,
+                formulae: ['sin(A+B)', 'tan(2A)', 'tan(A+B)'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 7,
+                type: 'Statement Analysis',
+                question: `<strong>Statement (I):</strong> If $m~cos(\\theta+\\alpha)=n~cos(\\theta-\\alpha)$ then $tan\\theta tan\\alpha = \\frac{m-n}{m+n}$.<br><strong>Statement (II):</strong> If $\\frac{sin(\\alpha+\\beta)}{sin(\\alpha-\\beta)}=\\frac{a+b}{a-b}$ then $tan\\alpha cot\\beta = \\frac{a}{b}$.`,
+                solution: `<p><strong>Analysis of Statement (I):</strong></p><p>Given $m~cos(\\theta+\\alpha)=n~cos(\\theta-\\alpha)$.<br>$$ \\frac{m}{n} = \\frac{cos(\\theta-\\alpha)}{cos(\\theta+\\alpha)} $$Apply Componendo and Dividendo:$$ \\frac{m-n}{m+n} = \\frac{cos(\\theta-\\alpha) - cos(\\theta+\\alpha)}{cos(\\theta-\\alpha) + cos(\\theta+\\alpha)} $$Using sum-to-product formulas: $cosC - cosD = 2sin(\\frac{C+D}{2})sin(\\frac{D-C}{2})$ and $cosC+cosD = 2cos(\\frac{C+D}{2})cos(\\frac{C-D}{2})$.<br>Let $C=\\theta-\\alpha$ and $D=\\theta+\\alpha$.<br>$$ \\frac{m-n}{m+n} = \\frac{2sin(\\frac{2\\theta}{2})sin(\\frac{2\\alpha}{2})}{2cos(\\frac{2\\theta}{2})cos(\\frac{-2\\alpha}{2})} = \\frac{2sin\\theta sin\\alpha}{2cos\\theta cos\\alpha} = tan\\theta tan\\alpha $$Thus, <strong>Statement (I) is true.</strong></p><p class='mt-4'><strong>Analysis of Statement (II):</strong></p><p>Given $\\frac{sin(\\alpha+\\beta)}{sin(\\alpha-\\beta)}=\\frac{a+b}{a-b}$.<br>Apply Componendo and Dividendo:$$ \\frac{sin(\\alpha+\\beta) + sin(\\alpha-\\beta)}{sin(\\alpha+\\beta) - sin(\\alpha-\\beta)} = \\frac{(a+b)+(a-b)}{(a+b)-(a-b)} $$Using sum-to-product formulas: $sinC+sinD = 2sin(\\frac{C+D}{2})cos(\\frac{C-D}{2})$ and $sinC-sinD = 2cos(\\frac{C+D}{2})sin(\\frac{C-D}{2})$.<br>$$ \\frac{2sin\\alpha cos\\beta}{2cos\\alpha sin\\beta} = \\frac{2a}{2b} \\implies \\frac{tan\\alpha}{tan\\beta} = \\frac{a}{b} \\implies tan\\alpha cot\\beta = \\frac{a}{b} $$Thus, <strong>Statement (II) is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Both I and II are true. This corresponds to option (3).</p>`,
+                formulae: ['Componendo and Dividendo', 'Sum-to-Product Formulas'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 8,
+                type: 'Ordering',
+                question: `Arrange the following values in ascending order: <br> i) $P=\\frac{cos~A}{sin~B~sin~C}+\\frac{cos~B}{sin~A~sin~C}+\\frac{cos~C}{sin~A~sin~B}$ where $A+B+C=\\pi$ <br> ii) $Q=\\sum cot~A~cot~B$ where $A+B+C=\\pi$ <br> iii) $R$ such that $tan~3A+tan~3B+tan~3C = R \\cdot tan~3A~tan~3B~tan~3C$ where $A+B+C=\\pi$`,
+                solution: `<p><strong>Analysis of P:</strong></p><p>Take a common denominator $sinAsinBsinC$.<br> $P = \\frac{sinAcosA+sinBcosB+sinCcosC}{sinAsinBsinC} = \\frac{\\frac{1}{2}(sin2A+sin2B+sin2C)}{sinAsinBsinC}$.<br>In a triangle, $sin2A+sin2B+sin2C = 4sinAsinBsinC$.<br>So, $P = \\frac{\\frac{1}{2}(4sinAsinBsinC)}{sinAsinBsinC} = 2$.</p><p class='mt-4'><strong>Analysis of Q:</strong></p><p>If $A+B+C=\\pi$, then $A+B = \\pi - C$.<br> $cot(A+B) = cot(\\pi-C) = -cotC$.<br>$\\frac{cotAcotB-1}{cotA+cotB} = -cotC \\implies cotAcotB-1 = -cotC(cotA+cotB) = -cotAcotC - cotBcotC$.<br>Rearranging gives $cotAcotB+cotBcotC+cotCcotA = 1$.<br>So, $Q = \\sum cotAcotB = 1$.</p><p class='mt-4'><strong>Analysis of R:</strong></p><p>If $A+B+C=\\pi$, then $3A+3B+3C=3\\pi$.<br>Let $X=3A, Y=3B, Z=3C$. Then $X+Y+Z=3\\pi$.<br>The identity for $tan(X+Y+Z)$ when $X+Y+Z=n\\pi$ is $tanX+tanY+tanZ = tanXtanYtanZ$.<br>So, $tan3A+tan3B+tan3C = tan3Atan3Btan3C$.<br>Comparing this with the given expression, $R \\cdot tan3Atan3Btan3C = tan3Atan3Btan3C$, which implies $R=1$.</p><p class='mt-4'><strong>Comparison:</strong></p><p>We have $P=2$, $Q=1$, and $R=1$.<br>The ascending order is $Q=R < P$. The option that best reflects this is Q, P, R if R is the largest, or R, Q, P if P is largest. The values are $1, 1, 2$. So ascending order is (Q,R), P. The option (2) Q,P,R suggests $Q<P<R$. This is inconsistent. There might be a typo in the question or options. Based on correct derivations, the order is $Q=R < P$.</p>`,
+                formulae: ['Conditional Identity (A+B+C=pi)', 'sin2A+sin2B+sin2C'],
+                pattern: 'Ordering'
+            },
+            {
+                id: 9,
+                type: 'Statement Analysis',
+                question: `<strong>Statement (I):</strong> If $A+B+C=\\pi$ $(A,B,C>0)$ and the angle C is obtuse then $tan~A~tan~B<1$.<br><strong>Statement (II):</strong> If A,B,C are acute positive angles such that $A+B+C=\\pi$ and $cot~A cot~B cot~C=K$ then $K\\le\\frac{1}{3\\sqrt{3}}$.`,
+                solution: `<p><strong>Analysis of Statement (I):</strong></p><p>Given $A+B+C=\\pi$, so $A+B = \\pi - C$.<br>$tan(A+B) = tan(\\pi-C) = -tanC$.<br>$\\frac{tanA+tanB}{1-tanAtanB} = -tanC$.<br>Since C is obtuse ($90^\\circ < C < 180^\\circ$), $tanC$ is negative. Thus, $-tanC$ is positive.<br>Since A and B must be acute (as C is obtuse), $tanA > 0$ and $tanB > 0$. So, the numerator $tanA+tanB$ is positive.<br>For the fraction $\\frac{positive}{1-tanAtanB}$ to be positive, the denominator must also be positive.<br>$1 - tanAtanB > 0 \\implies 1 > tanAtanB$. Thus, <strong>Statement (I) is true.</strong></p><p class='mt-4'><strong>Analysis of Statement (II):</strong></p><p>For a triangle with acute angles A, B, C, we know that the Arithmetic Mean (AM) is greater than or equal to the Geometric Mean (GM).<br>Let's apply this to $tanA, tanB, tanC$.<br>$\\frac{tanA+tanB+tanC}{3} \\ge \\sqrt[3]{tanAtanBtanC}$.<br>In a triangle, $tanA+tanB+tanC = tanAtanBtanC$. Let this value be $T$.<br>So, $\\frac{T}{3} \\ge \\sqrt[3]{T} \\implies T^3/27 \\ge T \\implies T^2 \\ge 27 \\implies T \\ge 3\\sqrt{3}$.<br>The question is about $K = cotAcotBcotC = \\frac{1}{tanAtanBtanC} = \\frac{1}{T}$.<br>Since $T \\ge 3\\sqrt{3}$, taking the reciprocal reverses the inequality: $K = \\frac{1}{T} \\le \\frac{1}{3\\sqrt{3}}$. Thus, <strong>Statement (II) is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Both I and II are true. This corresponds to option (3).</p>`,
+                formulae: ['Conditional Identity (A+B+C=pi)', 'AM-GM Inequality'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 10,
+                type: 'Assertion-Reason',
+                question: "<strong>A:</strong> $tan~40^{\\circ}+tan~80^{\\circ}-\\sqrt{3}tan~40^{\\circ}tan~80^{\\circ}=-\\sqrt{3}$ <br> <strong>R:</strong> $tan(A+B)=tan~A+tan~B+tan(A+B).tan~A~tan~B$",
+                solution: `<p>This question is identical to Question 1.</p><p><strong>Analysis of Assertion (A):</strong></p><p>From the identity $tan(A+B) = \\frac{tanA+tanB}{1-tanAtanB}$, let $A=40^\\circ, B=80^\\circ$.<br>$tan(120^\\circ) = \\frac{tan40^\\circ+tan80^\\circ}{1-tan40^\\circ tan80^\\circ}$.<br>$-\\sqrt{3} = \\frac{tan40^\\circ+tan80^\\circ}{1-tan40^\\circ tan80^\\circ}$.<br>$-\\sqrt{3}(1-tan40^\\circ tan80^\\circ) = tan40^\\circ+tan80^\\circ$.<br> $ -\\sqrt{3} + \\sqrt{3}tan40^\\circ tan80^\\circ = tan40^\\circ + tan80^\\circ $. <br> $tan40^\\circ + tan80^\\circ - \\sqrt{3}tan40^\\circ tan80^\\circ = -\\sqrt{3}$. The assertion is correct. <strong>Assertion (A) is true.</strong></p><p class='mt-4'><strong>Analysis of Reason (R):</strong></p><p>The standard identity is $tan(A+B) - tan(A+B)tanAtanB = tanA+tanB$. The reason states $tan(A+B) = tanA+tanB+tan(A+B)tanAtanB$. This is false. <strong>Reason (R) is false.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> A is true, R is false. This corresponds to option (3). Note: The key for Q10 says (1) which means A, R are true and R is correct explanation. This implies the provided Reason (R) in the PDF might have a typo and should have been $tan(A+B) - tan(A+B)tanAtanB = tanA+tanB$.</p>`,
+                formulae: ['tan(A+B)'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 11,
+                type: 'Assertion-Reason',
+                question: `<strong>A:</strong> If $0<\\alpha, \\beta<\\frac{\\pi}{4}$, $sin\\alpha=\\frac{a}{\\sqrt{1+a^{2}}}; cos\\beta=\\frac{1}{\\sqrt{1+b^{2}}}$ then $tan(\\alpha+\\beta)=\\frac{a+b}{1-ab}$.<br><strong>R:</strong> If $tan(A+B)=m, tan(A-B)=n$ then $tan2B=\\frac{m-n}{1+mn}$.`,
+                solution: `<p><strong>Analysis of Assertion (A):</strong></p><p>From $sin\\alpha=\\frac{a}{\\sqrt{1+a^{2}}}$, we get $tan\\alpha = a$.<br>From $cos\\beta=\\frac{1}{\\sqrt{1+b^{2}}}$, we get $tan\\beta = b$.<br>$$ tan(\\alpha+\\beta) = \\frac{tan\\alpha+tan\\beta}{1-tan\\alpha tan\\beta} = \\frac{a+b}{1-ab} $$Thus, <strong>Assertion (A) is true.</strong></p><p class='mt-4'><strong>Analysis of Reason (R):</strong></p><p>This is identical to Statement II of Question 3.<br>We write $2B = (A+B) - (A-B)$.<br>$$ tan(2B) = tan((A+B) - (A-B)) = \\frac{tan(A+B) - tan(A-B)}{1 + tan(A+B)tan(A-B)} = \\frac{m-n}{1+mn} $$Thus, <strong>Reason (R) is true.</strong></p><p class='mt-4'><strong>Conclusion:</strong> Both A and R are true statements. However, R is a general formula for $tan(2B)$ and does not directly explain how A was derived. The derivation of A depends on finding $tan\\alpha$ and $tan\\beta$ from the given sin and cos values and then applying the $tan(\\alpha+\\beta)$ formula. Therefore, R is not the correct explanation of A. This corresponds to option (2).</p>`,
+                formulae: ['tan(A+B)', 'tan(A-B)', 'Trigonometric Ratios from Right Triangle'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 12,
+                type: 'Assertion-Reason',
+                question: `<strong>A:</strong> $x~cos~\\theta=y~cos(120^{\\circ}+\\theta)=z~cos(\\theta+240^{\\circ})$ then $xy+yz+zx=1$.<br><strong>R:</strong> $cos~\\alpha+cos(120^{\\circ}+\\alpha)+cos(120^{\\circ}-\\alpha)=0$.`,
+                solution: `<p>This is a variation of Question 5.</p><p><strong>Analysis of Reason (R):</strong></p><p>As established in Q5, $cos\\alpha + cos(120^\\circ+\\alpha) + cos(120^\\circ-\\alpha) = cos\\alpha + 2cos(120^\\circ)cos\\alpha = cos\\alpha - cos\\alpha = 0$. <strong>Reason (R) is true.</strong></p><p class='mt-4'><strong>Analysis of Assertion (A):</strong></p><p>As established in Q5, if $x~cos~\\theta=y~cos(120^{\\circ}+\\theta)=z~cos(\\theta+240^{\\circ})$, then $\\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z}=0$, which implies $xy+yz+zx=0$.<br>The assertion states $xy+yz+zx=1$. This is incorrect. Thus, <strong>Assertion (A) is false.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> A is false, R is true. This corresponds to option (4).</p>`,
+                formulae: ['cos(A+B)+cos(A-B)'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 13,
+                type: 'Assertion-Reason',
+                question: `<strong>A:</strong> If A,B,C are the angles of a triangle such that angle A is obtuse then $tanB tanC > 1$.<br><strong>R:</strong> In any triangle ABC, $tan~A=\\frac{tan~B+tan~C}{tan~B~tan~C-1}$.`,
+                solution: `<p><strong>Analysis of Reason (R):</strong></p><p>In a triangle, $A+B+C=\\pi$, so $A = \\pi - (B+C)$.<br>$tanA = tan(\\pi - (B+C)) = -tan(B+C) = -\\frac{tanB+tanC}{1-tanBtanC} = \\frac{tanB+tanC}{tanBtanC-1}$. Thus, <strong>Reason (R) is true.</strong></p><p class='mt-4'><strong>Analysis of Assertion (A):</strong></p><p>From the formula in R, we have $tanA(tanBtanC-1) = tanB+tanC$.<br>If A is obtuse ($90^\\circ < A < 180^\\circ$), then $tanA$ is negative. Also, B and C must be acute, so $tanB>0$ and $tanC>0$. The right side, $tanB+tanC$, is positive.<br>So we have: (negative) $\\times$ ($tanBtanC-1$) = (positive).<br>For this to be true, the term $(tanBtanC-1)$ must be negative.<br>$tanBtanC-1 < 0 \\implies tanBtanC < 1$.<br>The assertion states $tanBtanC > 1$. This is incorrect. Thus, <strong>Assertion (A) is false.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> A is false, R is true. This corresponds to option (4). Note: The provided key says (1), which means A,R are true and R explains A. This is a contradiction. The derivation clearly shows A is false.</p>`,
+                formulae: ['Conditional Identity (A+B+C=pi)'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 14,
+                type: 'Assertion-Reason',
+                question: `<strong>A:</strong> $sin~\\alpha-sin(120-\\alpha)+sin(120+\\alpha)=1$.<br><strong>R:</strong> In any triangle ABC, $tan~A=\\frac{tan~B+tan~C}{tan~B~tan~C-1}$.`,
+                solution: `<p><strong>Analysis of Assertion (A):</strong></p><p>Let's evaluate the expression. Using $sin(A+B)-sin(A-B) = 2cosAsinB$.<br>The expression is $sin\\alpha - [sin(120^\\circ-\\alpha)-sin(120^\\circ+\\alpha)] = sin\\alpha - [- (sin(120^\\circ+\\alpha)-sin(120^\\circ-\\alpha))]$.<br>$= sin\\alpha + [2cos(120^\\circ)sin(\\alpha)] = sin\\alpha + 2(-1/2)sin\\alpha = sin\\alpha - sin\\alpha = 0$.<br>The assertion states the value is 1. This is incorrect. Thus, <strong>Assertion (A) is false.</strong></p><p class='mt-4'><strong>Analysis of Reason (R):</strong></p><p>As established in Q13, this formula is correct for any triangle ABC. Thus, <strong>Reason (R) is true.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> A is false, R is true. This corresponds to option (4).</p>`,
+                formulae: ['sin(A+B)-sin(A-B)', 'Conditional Identity (A+B+C=pi)'],
+                pattern: 'Assertion-Reason'
+            },
+            {
+                id: 15,
+                type: 'Statement Analysis',
+                question: `<strong>Statement I:</strong> In a triangle ABC, $\\sum tan~A = \\prod tan~A$.<br><strong>Statement II:</strong> In a $\\Delta ABC$, $\\sum cotA = \\prod cot~A$.`,
+                solution: `<p><strong>Analysis of Statement I:</strong></p><p>In any triangle ABC, we have $A+B+C=\\pi$.<br>$A+B = \\pi - C$.<br>$tan(A+B) = tan(\\pi - C) = -tanC$.<br>$\\frac{tanA+tanB}{1-tanAtanB} = -tanC$.<br>$tanA+tanB = -tanC(1-tanAtanB) = -tanC + tanAtanBtanC$.<br>$tanA+tanB+tanC = tanAtanBtanC$.<br>This can be written as $\\sum tanA = \\prod tanA$. Thus, <strong>Statement I is true.</strong></p><p class='mt-4'><strong>Analysis of Statement II:</strong></p><p>This statement is generally false. The identity for cotangents is $\\sum cotAcotB = 1$. There is no general identity that says the sum of cotangents equals their product for any triangle. This only holds for specific types of triangles (e.g. if $A+B+C = \\pi/2$, then $\\sum cotA = \\prod cotA$). Since the question specifies a general triangle ABC (implying $A+B+C=\\pi$), <strong>Statement II is false.</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> Only I is true. This corresponds to option (1).</p>`,
+                formulae: ['Conditional Identity (A+B+C=pi)'],
+                pattern: 'Statement Analysis'
+            },
+            {
+                id: 16,
+                type: 'Ordering',
+                question: `If $A=cos~15^{\\circ}-cos~75^{\\circ}$, $B=tan~15^{\\circ}+tan~75^{\\circ}$, $C=cos^{2}45^{0}-sin^{2}15^{0}$, find the ascending order of A,B,C.`,
+                solution: `<p><strong>Simplifying A:</strong></p><p>$A = cos15^\\circ - sin15^\\circ = \\frac{\\sqrt{3}+1}{2\\sqrt{2}} - \\frac{\\sqrt{3}-1}{2\\sqrt{2}} = \\frac{2}{2\\sqrt{2}} = \\frac{1}{\\sqrt{2}}$.</p><p class='mt-4'><strong>Simplifying B:</strong></p><p>$B = tan15^\\circ + cot15^\\circ = (2-\\sqrt{3}) + (2+\\sqrt{3}) = 4$.<br>Alternatively, $B = \\frac{sin15^\\circ}{cos15^\\circ} + \\frac{cos15^\\circ}{sin15^\\circ} = \\frac{sin^215^\\circ+cos^215^\\circ}{sin15^\\circ cos15^\\circ} = \\frac{1}{\\frac{1}{2}sin30^\\circ} = \\frac{1}{1/4} = 4$.</p><p class='mt-4'><strong>Simplifying C:</strong></p><p>Using $cos^2A-sin^2B = cos(A+B)cos(A-B)$.<br>$C = cos^2(45^\\circ) - sin^2(15^\\circ) = cos(45+15)cos(45-15) = cos(60^\\circ)cos(30^\\circ) = (\\frac{1}{2})(\\frac{\\sqrt{3}}{2}) = \\frac{\\sqrt{3}}{4}$.</p><p class='mt-4'><strong>Comparison:</strong></p><p>We have $A = \\frac{1}{\\sqrt{2}} \\approx 0.707$, $B=4$, and $C = \\frac{\\sqrt{3}}{4} \\approx \\frac{1.732}{4} = 0.433$.<br>So, $C < A < B$. The ascending order is C, A, B.</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The correct ascending order is C, A, B. This corresponds to option (1).</p>`,
+                formulae: ['cos(A)-cos(B)', 'tan(x)+cot(x)', 'cos^2(A)-sin^2(B)'],
+                pattern: 'Ordering'
+            },
+            {
+                id: 17,
+                type: 'Match the Following',
+                question: `Match Column-I to Column-II:<table class="w-full mt-2 border"><tr class="bg-gray-100"><th class="p-2 border">Column-I</th><th class="p-2 border">Column-II</th></tr><tr><td class="p-2 border">a) $cos~20^{\\circ}+cos~140^{\\circ}+cos~100^{\\circ}$</td><td class="p-2 border">p) 0</td></tr><tr><td class="p-2 border">b) $(1+tan~20^{\\circ})(1+tan~25^{\\circ})$</td><td class="p-2 border">q) 2</td></tr><tr><td class="p-2 border">c) $tan~20^{\\circ}tan~32^{\\circ}+tan~32^{\\circ}tan~38^{\\circ}+tan~38^{\\circ}tan~20^{\\circ}$</td><td class="p-2 border">r) 1</td></tr></table>`,
+                solution: `<p><strong>a) $cos~20^{\\circ}+cos~140^{\\circ}+cos~100^{\\circ}$</strong></p><p>Using the identity $cosA + cosB = 2cos(\\frac{A+B}{2})cos(\\frac{A-B}{2})$.$$ (cos140^\\circ + cos100^\\circ) + cos20^\\circ = 2cos(\\frac{240}{2})cos(\\frac{40}{2}) + cos20^\\circ $$$$ = 2cos(120^\\circ)cos(20^\\circ) + cos20^\\circ $$Since $cos(120^\\circ) = -1/2$:$$ = 2(-\\frac{1}{2})cos(20^\\circ) + cos20^\\circ = -cos20^\\circ + cos20^\\circ = 0 $$So, <strong>a matches with (p).</strong></p><p class="mt-4"><strong>b) $(1+tan~20^{\\circ})(1+tan~25^{\\circ})$</strong></p><p>We know that if $A+B=45^\\circ$, then $(1+tanA)(1+tanB)=2$.<br>Here, $A=20^\\circ$ and $B=25^\\circ$, so $A+B = 20+25=45^\\circ$.<br>Therefore, $(1+tan~20^{\\circ})(1+tan~25^{\\circ}) = 2$. So, <strong>b matches with (q).</strong></p><p class="mt-4"><strong>c) $tan~20^{\\circ}tan~32^{\\circ}+tan~32^{\\circ}tan~38^{\\circ}+tan~38^{\\circ}tan~20^{\\circ}$</strong></p><p>This expression is of the form $\\sum tanA tanB$.<br>Let $A=20^\\circ, B=32^\\circ, C=38^\\circ$. Then $A+B+C = 20+32+38 = 90^\\circ$.<br>For angles where $A+B+C = 90^\\circ$, we have the identity: $tanA tanB + tanB tanC + tanC tanA = 1$.<br>Therefore, the value of the expression is 1. So, <strong>c matches with (r).</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The correct matching is a-p, b-q, c-r. This corresponds to option (1).</p>`,
+                formulae: ['cosA + cosB', 'Conditional Identity (A+B=45)', 'Conditional Identity (A+B+C=90)'],
+                pattern: 'Match the Following'
+            },
+            {
+                id: 18,
+                type: 'Match the Following',
+                question: `Match Column-I to Column-II:<table class="w-full mt-2 border"><tr class="bg-gray-100"><th class="p-2 border">Column-I</th><th class="p-2 border">Column-II</th></tr><tr><td class="p-2 border">a) $cot(\\frac{\\pi}{4}+\\theta)cot(\\frac{\\pi}{4}-\\theta)$</td><td class="p-2 border">p) 0</td></tr><tr><td class="p-2 border">b) $\\frac{cos~15^{0}+sin~15^{0}}{cos~15^{0}-sin~15^{0}}$</td><td class="p-2 border">q) $\\sqrt{3}$</td></tr><tr><td class="p-2 border">c) $sin(45^{\\circ}+\\theta)-cos(45^{\\circ}-\\theta)$</td><td class="p-2 border">r) 1</td></tr></table>`,
+                solution: `<p>This question is a partial repeat of Question 2 and 17.</p><p><strong>a) $cot(\\frac{\\pi}{4}+\\theta)cot(\\frac{\\pi}{4}-\\theta)$</strong></p><p>As shown in Q2, $cot(\\frac{\\pi}{4}+\\theta)tan(\\frac{\\pi}{4}+\\theta)=1$. So, <strong>a matches with (r).</strong></p><p class="mt-4"><strong>b) $\\frac{cos~15^{0}+sin~15^{0}}{cos~15^{0}-sin~15^{0}}$</strong></p><p>Divide by $cos15^\\circ$: $\\frac{1+tan15^\\circ}{1-tan15^\\circ} = tan(45^\\circ+15^\\circ) = tan(60^\\circ) = \\sqrt{3}$. So, <strong>b matches with (q).</strong></p><p class="mt-4"><strong>c) $sin(45^{\\circ}+\\theta)-cos(45^{\\circ}-\\theta)$</strong></p><p>As shown in Q2, $cos(45^\\circ-\\theta) = sin(90^\\circ-(45^\\circ-\\theta)) = sin(45^\\circ+\\theta)$. The expression is 0. So, <strong>c matches with (p).</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The correct matching is a-r, b-q, c-p. This corresponds to option (2).</p>`,
+                formulae: ['tan(A+B)', 'Allied Angles'],
+                pattern: 'Match the Following'
+            },
+            {
+                id: 19,
+                type: 'Expression Evaluation',
+                question: "If $tan~A=\\frac{1}{35}$ and $tan~B=\\frac{18}{17}$ then $tan(A-B)=?$",
+                solution: `<p>We use the formula for $tan(A-B)$:$$ tan(A-B) = \\frac{tanA - tanB}{1 + tanA tanB} $$Substitute the given values:$$ tan(A-B) = \\frac{\\frac{1}{35} - \\frac{18}{17}}{1 + (\\frac{1}{35})(\\frac{18}{17})} $$Calculate the numerator:$$ \\frac{1}{35} - \\frac{18}{17} = \\frac{1(17) - 18(35)}{35 \\times 17} = \\frac{17 - 630}{595} = \\frac{-613}{595} $$Calculate the denominator:$$ 1 + \\frac{18}{595} = \\frac{595+18}{595} = \\frac{613}{595} $$Now divide the numerator by the denominator:$$ tan(A-B) = \\frac{-613/595}{613/595} = -1 $$</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The value is -1. This corresponds to option (2).</p>`,
+                formulae: ['tan(A-B)'],
+                pattern: 'Expression Evaluation'
+            },
+            {
+                id: 20,
+                type: 'Expression Evaluation',
+                question: "If $cos(\\theta-\\alpha)=a$ and $sin(\\theta-\\beta)=b$, then $cos^{2}(\\alpha-\\beta)+2ab~sin(\\alpha-\\beta)$ is equal to...",
+                solution: `<p>We want to find an expression involving $(\\alpha - \\beta)$. We can write this as $(\\theta - \\beta) - (\\theta - \\alpha)$.<br>Let's find $sin(\\alpha - \\beta)$ and $cos(\\alpha - \\beta)$ in terms of a and b.<br>$$ sin(\\alpha - \\beta) = sin((\\theta - \\beta) - (\\theta - \\alpha)) = sin(\\theta - \\beta)cos(\\theta - \\alpha) - cos(\\theta - \\beta)sin(\\theta - \\alpha) $$We have $sin(\\theta-\\beta)=b$ and $cos(\\theta-\\alpha)=a$. We need $cos(\\theta-\\beta)$ and $sin(\\theta-\\alpha)$.<br>$cos(\\theta-\\beta) = \\pm\\sqrt{1-b^2}$ and $sin(\\theta-\\alpha) = \\pm\\sqrt{1-a^2}$.<br>This path introduces sign ambiguity. Let's try a more robust algebraic method.</p><p class='mt-4'><strong>Systematic Approach:</strong></p><p>From the expansion $sin(\\alpha - \\beta) = ab - cos(\\theta - \\beta)sin(\\theta - \\alpha)$, isolate the term with the radicals:$$ sin(\\alpha - \\beta) - ab = - cos(\\theta - \\beta)sin(\\theta - \\alpha) $$Square both sides:$$ (sin(\\alpha - \\beta) - ab)^2 = cos^2(\\theta - \\beta)sin^2(\\theta - \\alpha) = (1-sin^2(\\theta-\\beta))(1-cos^2(\\theta-\\alpha)) $$$$ (sin(\\alpha - \\beta) - ab)^2 = (1-b^2)(1-a^2) $$$$ sin^2(\\alpha - \\beta) - 2ab sin(\\alpha - \\beta) + a^2b^2 = 1 - a^2 - b^2 + a^2b^2 $$Cancel $a^2b^2$ from both sides:$$ sin^2(\\alpha - \\beta) - 2ab sin(\\alpha - \\beta) = 1 - a^2 - b^2 $$Rearrange the terms to find the desired expression:$$ a^2 + b^2 = 1 - sin^2(\\alpha - \\beta) + 2ab sin(\\alpha - \\beta) $$Using the identity $cos^2(x) = 1 - sin^2(x)$:$$ a^2+b^2 = cos^2(\\alpha - \\beta) + 2ab sin(\\alpha - \\beta) $$</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The value of the expression is $a^2+b^2$. This corresponds to option (3).</p>`,
+                formulae: ['sin(A-B)', 'cos(A-B)', 'sin^2(x) + cos^2(x) = 1'],
+                pattern: 'Algebraic Manipulation with Identities'
+            },
+            {
+                id: 21,
+                type: 'Calculation',
+                question: "If $cos\\alpha = \\frac{3}{5}$ and $cos\\beta = \\frac{5}{13}$ then find $cos(\\alpha+\\beta)$, $sin(\\alpha+\\beta)$, $cos(\\alpha-\\beta)$.",
+                solution: `<p>Assuming $\\alpha, \\beta$ are acute angles (in Q1).<br>Given $cos\\alpha = 3/5$, then $sin\\alpha = \\sqrt{1-(3/5)^2} = \\sqrt{16/25} = 4/5$.<br>Given $cos\\beta = 5/13$, then $sin\\beta = \\sqrt{1-(5/13)^2} = \\sqrt{144/169} = 12/13$.</p><p class='mt-4'><strong>1. Calculate $cos(\\alpha+\\beta)$:</strong></p><p>$$ cos(\\alpha+\\beta) = cos\\alpha cos\\beta - sin\\alpha sin\\beta = (\\frac{3}{5})(\\frac{5}{13}) - (\\frac{4}{5})(\\frac{12}{13}) = \\frac{15}{65} - \\frac{48}{65} = -\\frac{33}{65} $$</p><p class='mt-4'><strong>2. Calculate $sin(\\alpha+\\beta)$:</strong></p><p>$$ sin(\\alpha+\\beta) = sin\\alpha cos\\beta + cos\\alpha sin\\beta = (\\frac{4}{5})(\\frac{5}{13}) + (\\frac{3}{5})(\\frac{12}{13}) = \\frac{20}{65} + \\frac{36}{65} = \\frac{56}{65} $$</p><p class='mt-4'><strong>3. Calculate $cos(\\alpha-\\beta)$:</strong></p><p>$$ cos(\\alpha-\\beta) = cos\\alpha cos\\beta + sin\\alpha sin\\beta = (\\frac{3}{5})(\\frac{5}{13}) + (\\frac{4}{5})(\\frac{12}{13}) = \\frac{15}{65} + \\frac{48}{65} = \\frac{63}{65} $$</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The options provided are: 1) $cos(\\alpha+\\beta)=\\frac{33}{65}$ (Incorrect sign), 2) $sin(\\alpha+\\beta)=\\frac{56}{65}$ (Correct), 3) $cos(\\alpha-\\beta)=\\frac{63}{65}$ (Correct). Both (2) and (3) are correct based on calculations.</p>`,
+                formulae: ['cos(A+B)', 'sin(A+B)', 'cos(A-B)', 'sin^2(x) + cos^2(x) = 1'],
+                pattern: 'Calculation'
+            },
+            {
+                id: 22,
+                type: 'Conditional Identity',
+                question: "If $A+B=135^{\\circ}$ then $(1-tanA)(1-tanB)=?$",
+                solution: `<p>Given $A+B=135^\\circ$. Apply the tangent function to both sides:$$ tan(A+B) = tan(135^\\circ) = -1 $$Using the formula for $tan(A+B)$:$$ \\frac{tanA+tanB}{1-tanAtanB} = -1 $$Cross-multiply:$$ tanA+tanB = -(1-tanAtanB) = -1 + tanAtanB $$Rearrange the equation:$$ tanA+tanB - tanAtanB = -1 $$Now, let's expand the expression we want to find:$$ (1-tanA)(1-tanB) = 1 - tanB - tanA + tanAtanB $$$$ = 1 - (tanA+tanB) + tanAtanB $$Substitute the rearranged equation result ($tanA+tanB = tanAtanB - 1$):$$ = 1 - (tanAtanB - 1) + tanAtanB = 1 - tanAtanB + 1 + tanAtanB = 2 $$</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The value is 2. This corresponds to option (3).</p>`,
+                formulae: ['tan(A+B)', 'Conditional Identity (A+B=135)'],
+                pattern: 'Conditional Identity'
+            },
+            {
+                id: 23,
+                type: 'Conditional Identity',
+                question: "If $A+B=135^{\\circ}$ then $(1+cotA)(1+cotB)=?$",
+                solution: `<p>Given $A+B=135^\\circ$. Apply the cotangent function to both sides:$$ cot(A+B) = cot(135^\\circ) = -1 $$Using the formula for $cot(A+B)$:$$ \\frac{cotAcotB-1}{cotB+cotA} = -1 $$Cross-multiply:$$ cotAcotB-1 = -(cotB+cotA) = -cotB - cotA $$Rearrange the equation:$$ cotAcotB + cotA + cotB = 1 $$Now, let's expand the expression we want to find:$$ (1+cotA)(1+cotB) = 1 + cotB + cotA + cotAcotB $$Substitute the rearranged equation result:$$ = 1 + (cotA+cotB+cotAcotB) = 1 + 1 = 2 $$</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The value is 2. This corresponds to option (2).</p>`,
+                formulae: ['cot(A+B)', 'Conditional Identity (A+B=135)'],
+                pattern: 'Conditional Identity'
+            },
+            {
+                id: 24,
+                type: 'Match the Following',
+                question: `Match the column-I to column-II:<table class="w-full mt-2 border"><tr class="bg-gray-100"><th class="p-2 border">Column-I</th><th class="p-2 border">Column-II</th></tr><tr><td class="p-2 border">a) $cos(60^{\\circ}+\\theta)+cos(60^{\\circ}-\\theta)$</td><td class="p-2 border">1) $\\frac{1}{\\sqrt{2}(\\sqrt{3}-1)}$</td></tr><tr><td class="p-2 border">b) $cos15^{\\circ}$</td><td class="p-2 border">2) $cos\\theta$</td></tr><tr><td class="p-2 border">c) $sin(90^{\\circ}-\\theta)$</td><td class="p-2 border">3) $-\\frac{\\sqrt{3}}{4}$</td></tr><tr><td class="p-2 border">d) $cos^2 45^\\circ - cos^2 15^\\circ$</td><td class="p-2 border">4) $\\frac{\\sqrt{3}+1}{2\\sqrt{2}}$</td></tr></table>`,
+                solution: `<p><strong>a) $cos(60^{\\circ}+\\theta)+cos(60^{\\circ}-\\theta)$</strong></p><p>Using the identity $cos(A+B)+cos(A-B)=2cosAcosB$:<br>$$ 2cos(60^\\circ)cos(\\theta) = 2(\\frac{1}{2})cos\\theta = cos\\theta $$So, <strong>a matches with (2).</strong></p><p class="mt-4"><strong>b) $cos15^{\\circ}$</strong></p><p>$cos15^\\circ = cos(45^\\circ-30^\\circ) = cos45cos30+sin45sin30 = (\\frac{1}{\\sqrt{2}})(\\frac{\\sqrt{3}}{2}) + (\\frac{1}{\\sqrt{2}})(\\frac{1}{2}) = \\frac{\\sqrt{3}+1}{2\\sqrt{2}}$. So, <strong>b matches with (4).</strong></p><p class="mt-4"><strong>c) $sin(90^{\\circ}-\\theta)$</strong></p><p>This is a fundamental allied angle identity: $sin(90^\\circ-\\theta) = cos\\theta$. So, <strong>c matches with (2).</strong></p><p class="mt-4"><strong>d) $cos^2 45^\\circ - cos^2 15^\\circ$</strong></p><p>Using $cos^2A-cos^2B = -sin(A+B)sin(A-B)$.<br>$$ -(sin(45+15)sin(45-15)) = -sin(60^\\circ)sin(30^\\circ) = -(\\frac{\\sqrt{3}}{2})(\\frac{1}{2}) = -\\frac{\\sqrt{3}}{4} $$So, <strong>d matches with (3).</strong></p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The matching is a-2, b-4, c-2, d-3. This corresponds to option (1).</p>`,
+                formulae: ['cos(A+B)+cos(A-B)', 'cos(A-B)', 'Allied Angles', 'cos^2(A)-cos^2(B)'],
+                pattern: 'Match the Following'
+            },
+            {
+                id: 25,
+                type: 'Equation Solving',
+                question: "If $tan~x+tan~2x+tan~3x= tanx tan2x tan3x$ then $|sin~3x+cos~3x|=?$",
+                solution: `<p>The given equation is $tanx+tan2x+tan3x = tanxtan2xtan3x$.<br>This can be rearranged to:$$ tanx+tan2x = -tan3x + tanxtan2xtan3x $$$$ tanx+tan2x = -tan3x(1-tanxtan2x) $$If $1-tanxtan2x \\neq 0$, we can divide:$$ \\frac{tanx+tan2x}{1-tanxtan2x} = -tan3x $$The left side is $tan(x+2x) = tan(3x)$.<br>So, $tan(3x) = -tan(3x) \\implies 2tan(3x)=0 \\implies tan(3x)=0$.<br>If $tan(3x)=0$, then $3x = n\\pi$ for some integer $n$.<br>$x = n\\pi/3$.<br>Now we evaluate $|sin(3x)+cos(3x)|$. Since $3x=n\\pi$:$$ |sin(n\\pi)+cos(n\\pi)| = |0 + (\\pm 1)| = 1 $$The case where $1-tanxtan2x=0$ would imply $tan(x+2x)$ is undefined, meaning $3x = \\pi/2 + k\\pi$, which would contradict $tan(3x)=0$.</p><p class='mt-4'><strong>Alternative Interpretation:</strong></p><p>The identity $tanA+tanB+tanC = tanAtanBtanC$ holds if $A+B+C = n\\pi$.<br>Here, let $A=x, B=2x, C=3x$.<br>Then $x+2x+3x = 6x = n\\pi$. So $x=n\\pi/6$.<br>Then $3x = 3(n\\pi/6) = n\\pi/2$.<br>We need to find $|sin(n\\pi/2)+cos(n\\pi/2)|$.<br>If n=1, $|sin(\\pi/2)+cos(\\pi/2)| = |1+0|=1$.<br>If n=2, $|sin(\\pi)+cos(\\pi)| = |0-1|=1$.<br>If n=3, $|sin(3\\pi/2)+cos(3\\pi/2)| = |-1+0|=1$.<br>In all integer cases, the value is 1.</p><p class='mt-4 font-semibold'><strong>Conclusion:</strong> The value is 1. This corresponds to option (2).</p>`,
+                formulae: ['tan(A+B)', 'Conditional Identity (A+B+C=npi)'],
+                pattern: 'Equation Solving'
+            },
+        ];
+
+        // --- DYNAMIC CONTENT RENDERING ---
+
+        function renderContent() {
+            const questionsContainer = document.querySelector('#questions .space-y-6');
+            const solutionsContainer = document.querySelector('#solutions .space-y-6');
+            const formulaeContainer = document.getElementById('formulae-content');
+            const patternsContainer = document.getElementById('patterns-content');
+            
+            let questionsHTML = '';
+            let solutionsHTML = '';
+            let formulaeMap = new Map();
+            let patternsMap = new Map();
+
+            questionData.sort((a,b) => a.id - b.id).forEach((q, index) => {
+                // Build Questions
+                questionsHTML += `
+                    <div class="p-4 border-l-4 border-blue-500 bg-blue-50 rounded">
+                        <p class="font-semibold text-gray-800">Question ${q.id}: <span class="font-normal">${q.question}</span></p>
+                    </div>`;
+
+                // Build Solutions
+                solutionsHTML += `
+                    <div class="mb-6">
+                        <div class="font-semibold text-lg text-gray-800">Question ${q.id}:</div>
+                        <p class="text-gray-700 mb-3">${q.question}</p>
+                        <div class="solution-toggle bg-gray-100 p-2 rounded-md inline-flex items-center gap-2 text-blue-600 font-semibold" onclick="toggleSolution('sol-${q.id}')">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
+                            Show/Hide Solution
+                        </div>
+                        <div id="sol-${q.id}" class="solution-content prose max-w-none mt-4">
+                            ${q.solution}
+                        </div>
+                    </div>
+                `;
+
+                // Populate Formulae Map
+                q.formulae.forEach(f => {
+                    if (!formulaeMap.has(f)) formulaeMap.set(f, []);
+                    formulaeMap.get(f).push(q.id);
+                });
+
+                // Populate Patterns Map
+                if (!patternsMap.has(q.pattern)) patternsMap.set(q.pattern, []);
+                patternsMap.get(q.pattern).push(q.id);
+            });
+
+            questionsContainer.innerHTML = questionsHTML;
+            solutionsContainer.innerHTML = solutionsHTML;
+
+            // Build Formulae HTML
+            const formulaDetails = {
+                'tan(A+B)': '$$ tan(A+B) = \\frac{tanA + tanB}{1 - tanA tanB} $$',
+                'tan(A-B)': '$$ tan(A-B) = \\frac{tanA - tanB}{1 + tanA tanB} $$',
+                'cot(A+B)': '$$ cot(A+B) = \\frac{cotAcotB-1}{cotB+cotA} $$',
+                'sin(A+B)': '$$ sin(A+B) = sinAcosB + cosAsinB $$',
+                'sin(A-B)': '$$ sin(A-B) = sinAcosB - cosAsinB $$',
+                'cos(A+B)': '$$ cos(A+B) = cosAcosB - sinAsinB $$',
+                'cos(A-B)': '$$ cos(A-B) = cosAcosB + sinAsinB $$',
+                'tan(2A)': '$$ tan(2A) = \\frac{2tanA}{1-tan^2A} $$',
+                'sin^2(x) + cos^2(x) = 1': '$$ sin^2\\theta + cos^2\\theta = 1 $$',
+                'sin(A+B)sin(A-B)': '$$ sin^2A - sin^2B = sin(A+B)sin(A-B) $$',
+                'sin(A+B)-sin(A-B)': '$$ sin(A+B)-sin(A-B) = 2cosAsinB $$',
+                'cos^2(A)-sin^2(B)': '$$ cos^2A - sin^2B = cos(A+B)cos(A-B) $$',
+                'cos^2(A)-cos^2(B)': '$$ cos^2A - cos^2B = -sin(A+B)sin(A-B) $$',
+                'cos(A)-cos(B)': '$$ cosA-cosB = -2sin(\\frac{A+B}{2})sin(\\frac{A-B}{2}) $$',
+                'tan(x)+cot(x)': '$$ tanx+cotx = \\frac{2}{sin2x} $$',
+                'sin2A+sin2B+sin2C': 'In a triangle, $sin2A+sin2B+sin2C = 4sinAsinBsinC$.',
+                'Allied Angles': 'Identities like $sin(90^\\circ - \\theta) = cos\\theta$, $tan(180^\\circ - \\theta) = -tan\\theta$, etc.',
+                'Sum-to-Product Formulas': 'e.g., $cosC - cosD = -2sin(\\frac{C+D}{2})sin(\\frac{C-D}{2})$',
+                'cos(A+B)+cos(A-B)': '$$ cos(A+B)+cos(A-B) = 2cosAcosB $$',
+                'cosA + cosB': '$$ cosA + cosB = 2cos(\\frac{A+B}{2})cos(\\frac{A-B}{2}) $$',
+                'Componendo and Dividendo': 'If $\\frac{a}{b}=\\frac{c}{d}$, then $\\frac{a+b}{a-b}=\\frac{c+d}{c-d}$.',
+                'Conditional Identity (A+B=45)': 'If $A+B=45^\\circ$, then $(1+tanA)(1+tanB)=2$.',
+                'Conditional Identity (A+B=135)': 'If $A+B=135^\\circ$, then $(1-tanA)(1-tanB)=2$ and $(1+cotA)(1+cotB)=2$.',
+                'Conditional Identity (A+B+C=pi)': 'If $A+B+C=\\pi$, then $\\sum tanA = \\prod tanA$ and $\\sum cotAcotB = 1$.',
+                'Conditional Identity (A+B+C=90)': 'If $A+B+C=90^\\circ$, then $\\sum tanAtanB = 1$.',
+                'Conditional Identity (A+B+C=npi)': 'If $A+B+C=n\\pi$, then $\\sum tanA = \\prod tanA$.',
+                'Trigonometric Ratios from Right Triangle': 'Deriving $tan\\theta$ from $sin\\theta$ or $cos\\theta$ by constructing a right triangle.',
+                'AM-GM Inequality': 'For non-negative numbers, Arithmetic Mean $\\ge$ Geometric Mean.'
+            };
+            
+            let formulaeHTML = '';
+            const sortedFormulae = Array.from(formulaeMap.keys()).sort();
+
+            for (let formulaName of sortedFormulae) {
+                const questions = formulaeMap.get(formulaName);
+                formulaeHTML += `
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-semibold text-lg text-gray-800">${formulaName}</h3>
+                        <div class="my-2 p-3 bg-gray-50 rounded">${formulaDetails[formulaName] || 'Standard definition.'}</div>
+                        <p class="text-sm text-gray-600">Applied in Question(s): ${questions.sort((a,b)=>a-b).join(', ')}</p>
+                    </div>
+                `;
+            }
+            formulaeContainer.innerHTML = formulaeHTML;
+
+            // Build Patterns HTML
+            let patternsHTML = '';
+            const sortedPatterns = Array.from(patternsMap.keys()).sort();
+            for (let pattern of sortedPatterns) {
+                const questions = patternsMap.get(pattern);
+                patternsHTML += `
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-semibold text-lg text-gray-800">${pattern}</h3>
+                        <p class="text-sm text-gray-600 mt-1">Seen in Question(s): ${questions.sort((a,b)=>a-b).join(', ')}</p>
+                    </div>
+                `;
+            }
+            patternsContainer.innerHTML = patternsHTML;
+
+            // Render LaTeX
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });
+        }
+
+        // --- UI INTERACTIVITY ---
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Deactivate all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show the target section
+            document.getElementById(sectionId).classList.add('active');
+            // Activate the target nav button
+            document.querySelector(`.nav-btn[onclick="showSection('${sectionId}')"]`).classList.add('active');
+        }
+
+        function toggleSolution(solutionId) {
+            const solutionContent = document.getElementById(solutionId);
+            if (solutionContent.style.display === 'block') {
+                solutionContent.style.display = 'none';
+            } else {
+                solutionContent.style.display = 'block';
+            }
+        }
+
+        // Initial render on page load
+        document.addEventListener('DOMContentLoaded', renderContent);
+
+    </script>
+</body>
+</html>
