@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Assistant</title>
     
-    <!-- CSS is embedded directly inside the HTML file -->
     <style>
         /* --- General Setup --- */
         :root {
-            --primary-color: #005A9C;
-            --secondary-color: #FDB813;
+            --primary-color: #005A9C; /* A nice academic blue */
+            --secondary-color: #FDB813; /* A contrasting yellow */
             --background-color: #f4f7f6;
             --card-bg-color: #ffffff;
             --text-color: #333333;
@@ -27,6 +26,7 @@
             line-height: 1.6;
         }
 
+        /* --- Header & Navigation --- */
         .main-header {
             background-color: var(--header-bg-color);
             padding: 1rem 2rem;
@@ -56,7 +56,7 @@
             padding: 0.5rem 0;
             border-bottom: 2px solid transparent;
             transition: border-color 0.3s ease;
-            cursor: pointer;
+            cursor: pointer; /* Important for clickable elements */
         }
 
         .main-nav a:hover, .main-nav a.active {
@@ -64,6 +64,7 @@
             border-bottom-color: var(--secondary-color);
         }
 
+        /* --- Main Content & Cards --- */
         .main-content {
             padding: 2rem;
             max-width: 1200px;
@@ -116,21 +117,23 @@
         }
 
         .button:hover, .back-button:hover {
-            background-color: #004170;
+            background-color: #004170; /* Darker blue */
         }
 
+        /* --- Page Visibility Control --- */
         .page {
-            display: none;
+            display: none; /* All pages are hidden by default */
         }
 
         .page.active {
-            display: block;
+            display: block; /* The active page is shown */
         }
 
+        /* --- Embed Options --- */
         .embed-responsive {
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             margin-top: 1rem;
         }
 
@@ -143,6 +146,7 @@
             border: 0;
         }
 
+        /* --- Footer --- */
         .main-footer {
             background-color: var(--footer-bg-color);
             color: var(--footer-text-color);
@@ -153,6 +157,7 @@
     </style>
 </head>
 <body>
+
     <header class="main-header">
         <h1>My Academic Assistant</h1>
         <nav class="main-nav">
@@ -164,6 +169,7 @@
     </header>
 
     <main class="main-content">
+
         <div id="page-home" class="page active">
             <section class="card">
                 <h2>Welcome Back!</h2>
@@ -175,12 +181,10 @@
                     <p>Access all your IIT preparation materials and tools.</p>
                     <a data-page="iit" class="button nav-link">View IIT Dashboard</a>
                 </div>
-                <div class="card embed-card">
-                    <h3>Today's Focus Video</h3>
-                    <p>Use the embed feature to add videos, PDFs, or other resources.</p>
-                    <div class="embed-responsive">
-                        <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                <div class="card">
+                    <h3>Your Custom Section</h3>
+                    <p>This is where you can add another card for your specific content.</p>
+                    <a data-page="custom-section-overview" class="button nav-link">Explore Custom</a>
                 </div>
             </section>
         </div>
@@ -193,6 +197,7 @@
             <div class="card-container">
                 <div class="card">
                     <h3>Combined Standard Resources</h3>
+                    <p>Curated links, texts, and standard materials (PDFs).</p>
                     <ul>
                         <li><a class="nav-link" data-page="csr-m1">Maths - 1</a></li>
                         <li><a class="nav-link" data-page="csr-m2">Maths - 2</a></li>
@@ -205,6 +210,7 @@
                 </div>
                 <div class="card">
                     <h3>Developed Resources</h3>
+                    <p>Custom-coded interactive tools and modules.</p>
                     <ul>
                         <li><a class="nav-link" data-page="dr-m1">Maths - 1</a></li>
                         <li><a class="nav-link" data-page="dr-m2">Maths - 2</a></li>
@@ -223,26 +229,191 @@
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
                 <h2>Combined Standard Resources: Maths 1</h2>
                 <hr>
-                <h3>Chapter 1: Algebra</h3>
-                <p>This section covers foundational algebraic concepts including sets, relations, and functions.</p>
-                <h4>External Resources</h4>
+                <p>Select a topic to view its resources.</p>
                 <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Algebra" target="_blank">Algebra on Wikipedia</a></li>
-                    <li><a href="https://www.khanacademy.org/math/algebra" target="_blank">Khan Academy Algebra Course</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles">Compound Angles</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles">Multiple and Sub Multiple Angles</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions">Partial Fractions</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions">Progressions</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem">Binomial Theorem</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry">Coordinate Geometry</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices">Matrices</a></li>
                 </ul>
-                <h3>Chapter Notes PDF</h3>
-                <p>Note: Embedding local files may not work when you open the HTML from your computer directly due to browser security. It will work when hosted on a server like GitHub Pages.</p>
             </section>
         </div>
+        
+        <div id="page-csr-m2" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Combined Standard Resources: Maths 2</h2>
+                <hr>
+                <p>Select a topic to view its resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m2-relations">Relations</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations">Quadratic Expressions and Equations</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="page-csr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Compound Angles</h2><hr><p>Content for Compound Angles goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Multiple and Sub Multiple Angles</h2><hr><p>Content for Multiple and Sub Multiple Angles goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Partial Fractions</h2><hr><p>Content for Partial Fractions goes here.</p></section></div>
+        <div id="page-csr-m1-progressions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Progressions</h2><hr><p>Content for Progressions goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Binomial Theorem</h2><hr><p>Content for Binomial Theorem goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Coordinate Geometry</h2><hr><p>Content for Coordinate Geometry goes here.</p></section></div>
+        <div id="page-csr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Matrices</h2><hr><p>Content for Matrices goes here.</p></section></div>
+        <div id="page-csr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Relations</h2><hr><p>Content for Relations goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Quadratic Expressions and Equations</h2><hr><p>Content for Quadratic Expressions and Equations goes here.</p></section></div>
+        
+        <div id="page-csr-p1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Physics 1</h2><p>Content for Physics 1 goes here.</p></section></div>
+        <div id="page-csr-p2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Physics 2</h2><p>Content for Physics 2 goes here.</p></section></div>
+        <div id="page-csr-c1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Chemistry 1</h2><p>Content for Chemistry 1 goes here.</p></section></div>
+        <div id="page-csr-c2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Chemistry 2</h2><p>Content for Chemistry 2 goes here.</p></section></div>
+        <div id="page-csr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Exam Corner</h2><p>Content for Exam Corner goes here.</p></section></div>
 
         <div id="page-dr-m1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
                 <h2>Developed Resources: Maths 1</h2>
                 <hr>
-                <!-- Add your custom interactive tools here -->
+                <p>Select a topic to explore interactive tools and custom resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles">Compound Angles</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles">Multiple and Sub Multiple Angles</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions">Partial Fractions</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions">Progressions</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem">Binomial Theorem</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry">Coordinate Geometry</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices">Matrices</a></li>
+                </ul>
             </section>
         </div>
+
+        <div id="page-dr-m2" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Developed Resources: Maths 2</h2>
+                <hr>
+                <p>Select a topic to explore interactive tools and custom resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m2-relations">Relations</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations">Quadratic Expressions and Equations</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="page-dr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Compound Angles</h2><hr><p>Custom code for Compound Angles goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Multiple and Sub Multiple Angles</h2><hr><p>Custom code for Multiple and Sub Multiple Angles goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Partial Fractions</h2><hr><p>Custom code for Partial Fractions goes here.</p></section></div>
+        <div id="page-dr-m1-progressions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Progressions</h2><hr><p>Custom code for Progressions goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Binomial Theorem</h2><hr><p>Custom code for Binomial Theorem goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Coordinate Geometry</h2><hr><p>Custom code for Coordinate Geometry goes here.</p></section></div>
+        <div id="page-dr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Matrices</h2><hr><p>Custom code for Matrices goes here.</p></section></div>
+        <div id="page-dr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Relations</h2><hr><p>Custom code for Relations goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Quadratic Expressions and Equations</h2><hr><p>Custom code for Quadratic Expressions and Equations goes here.</p></section></div>
+
+        <div id="page-dr-p1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Physics 1</h2><p>Custom code for Physics 1 goes here.</p></section></div>
+        <div id="page-dr-p2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Physics 2</h2><p>Custom code for Physics 2 goes here.</p></section></div>
+        <div id="page-dr-c1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Chemistry 1</h2><p>Custom code for Chemistry 1 goes here.</p></section></div>
+        <div id="page-dr-c2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Chemistry 2</h2><p>Custom code for Chemistry 2 goes here.</p></section></div>
+        <div id="page-dr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Exam Corner</h2><p>Custom code for Exam Corner goes here.</p></section></div>
+
+        <div id="page-custom-section-overview" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="home">← Back to Home</button>
+                <h2>My Custom Study Materials</h2>
+                <hr>
+                <p>This is a new section where you can organize any other specific study materials not directly related to IIT, or additional resources.</p>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>General Aptitude</h3>
+                        <p>Resources for improving general problem-solving skills.</p>
+                        <ul>
+                            <li><a class="nav-link" data-page="aptitude-math">Quantitative Aptitude</a></li>
+                            <li><a class="nav-link" data-page="aptitude-verbal">Verbal Reasoning</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Programming Fundamentals</h3>
+                        <p>Beginner guides and practice problems for coding.</p>
+                        <ul>
+                            <li><a class="nav-link" data-page="programming-python">Python Basics</a></li>
+                            <li><a class="nav-link" data-page="programming-cpp">C++ Fundamentals</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-aptitude-math" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
+                <h2>Quantitative Aptitude</h2>
+                <hr>
+                <p>This page focuses on mathematical aptitude topics.</p>
+                <h3>Topic: Percentages</h3>
+                <p>Understanding percentages is crucial for various competitive exams.</p>
+                <ul>
+                    <li><a href="https://www.dummies.com/education/math/percentages-for-dummies-cheat-sheet/" target="_blank">Percentages Cheat Sheet</a></li>
+                </ul>
+                <p><strong>Practice Question:</strong> If an item costs $120 and is discounted by 25%, what is the final price?</p>
+                </section>
+        </div>
+
+        <div id="page-aptitude-verbal" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
+                <h2>Verbal Reasoning</h2>
+                <hr>
+                <p>Improve your English language and logical reasoning skills.</p>
+                <h3>Topic: Reading Comprehension</h3>
+                <p>Tips and practice passages for reading comprehension.</p>
+                <p><strong>Exercise:</strong> Read the following passage and answer the questions below.</p>
+                <blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
+                    "The quick brown fox jumps over the lazy dog. This sentence is often used to display fonts because it contains all letters of the English alphabet."
+                </blockquote>
+                <p>1. What is the color of the fox?</p>
+                <p>2. What animal does the fox jump over?</p>
+            </section>
+        </div>
+
+        <div id="page-programming-python" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
+                <h2>Python Basics</h2>
+                <hr>
+                <h3>Introduction to Variables</h3>
+                <p>Learn how to declare and use variables in Python.</p>
+                <pre style="background-color: #eee; padding: 10px; border-radius: 5px;"><code>
+# This is a Python comment
+name = "Alice"
+age = 30
+height = 1.75
+
+print(f"Name: {name}, Age: {age}, Height: {height}")
+                </code></pre>
+                <p>You can embed interactive Python shells using services like repl.it or similar platforms if they offer embed codes.</p>
+            </section>
+        </div>
+
+        <div id="page-programming-cpp" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
+                <h2>C++ Fundamentals</h2>
+                <hr>
+                <h3>Hello World in C++</h3>
+                <p>The classic first program in C++.</p>
+                <pre style="background-color: #eee; padding: 10px; border-radius: 5px;"><code>
+#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+    return 0;
+}
+                </code></pre>
+            </section>
+        </div>
+
     </main>
 
     <footer class="main-footer">
@@ -250,33 +421,56 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- PAGE NAVIGATION LOGIC ---
             const pages = document.querySelectorAll('.page');
             const navLinks = document.querySelectorAll('.nav-link');
             const mainNavLinks = document.querySelectorAll('.main-nav .nav-link');
 
             function showPage(pageId) {
-                pages.forEach(page => page.classList.remove('active'));
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show the requested page
                 const activePage = document.getElementById('page-' + pageId);
-                (activePage || document.getElementById('page-home')).classList.add('active');
+                if (activePage) {
+                    activePage.classList.add('active');
+                } else {
+                    // Fallback to home page if ID is not found
+                    document.getElementById('page-home').classList.add('active');
+                }
+
+                // Update active state for main navigation
                 mainNavLinks.forEach(link => {
                     link.classList.remove('active');
+                    // Activate the main nav link if it matches the page or is a subpage of it
                     const linkPage = link.getAttribute('data-page');
-                    if (linkPage === pageId || (linkPage === 'iit' && pageId.includes('-'))) {
+                    if (linkPage === pageId || 
+                        (linkPage === 'iit' && (pageId.startsWith('csr-') || pageId.startsWith('dr-'))) ||
+                        (linkPage === 'home' && (pageId === 'home' || pageId.startsWith('custom-section-') || pageId.startsWith('aptitude-') || pageId.startsWith('programming-')))
+                        ) {
                         link.classList.add('active');
                     }
                 });
             }
 
+            // Add click event listeners to all navigation links
             navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
                     const pageId = this.getAttribute('data-page');
                     showPage(pageId);
-                    window.scrollTo(0, 0);
+                    window.scrollTo(0, 0); // Scroll to top of the page on navigation
                 });
             });
+
+            // Initial page load: show the home page by default
+            showPage('home');
         });
     </script>
+
 </body>
 </html>
