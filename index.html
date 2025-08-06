@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Assistant</title>
     
+    <!-- CSS is embedded directly inside the HTML file -->
     <style>
         /* --- General Setup --- */
         :root {
@@ -162,6 +163,7 @@
         <h1>My Academic Assistant</h1>
         <nav class="main-nav">
             <ul>
+                <!-- These links use data-page attributes to tell JavaScript which page to show -->
                 <li><a data-page="home" class="nav-link active">Home</a></li>
                 <li><a data-page="iit" class="nav-link">IIT</a></li>
             </ul>
@@ -170,6 +172,9 @@
 
     <main class="main-content">
 
+        <!-- ====================================================== -->
+        <!-- HOME PAGE -->
+        <!-- ====================================================== -->
         <div id="page-home" class="page active">
             <section class="card">
                 <h2>Welcome Back!</h2>
@@ -181,6 +186,7 @@
                     <p>Access all your IIT preparation materials and tools.</p>
                     <a data-page="iit" class="button nav-link">View IIT Dashboard</a>
                 </div>
+                <!-- Removed the "Today's Focus Video" card from the home page as requested -->
                 <div class="card">
                     <h3>Your Custom Section</h3>
                     <p>This is where you can add another card for your specific content.</p>
@@ -189,6 +195,9 @@
             </section>
         </div>
 
+        <!-- ====================================================== -->
+        <!-- IIT DASHBOARD PAGE -->
+        <!-- ====================================================== -->
         <div id="page-iit" class="page">
             <section class="card">
                 <h2>IIT Preparation Dashboard</h2>
@@ -224,6 +233,11 @@
             </div>
         </div>
 
+        <!-- ================================================================== -->
+        <!-- IIT SUBPAGES: Combined Standard Resources (CSR) -->
+        <!-- ================================================================== -->
+        
+        <!-- CSR Maths 1 Page with new subpages -->
         <div id="page-csr-m1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -242,6 +256,7 @@
             </section>
         </div>
         
+        <!-- CSR Maths 2 Page with new subpages -->
         <div id="page-csr-m2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -255,6 +270,7 @@
             </section>
         </div>
         
+        <!-- CSR Physics 1 Page with new subpages -->
         <div id="page-csr-p1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -309,6 +325,7 @@
             </section>
         </div>
 
+        <!-- CSR Physics 2 Page with new subpages -->
         <div id="page-csr-p2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -328,10 +345,44 @@
             </section>
         </div>
 
-        <div id="page-csr-c1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Chemistry 1</h2><p>Content for Chemistry 1 goes here.</p></section></div>
-        <div id="page-csr-c2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Chemistry 2</h2><p>Content for Chemistry 2 goes here.</p></section></div>
+        <!-- CSR Chemistry 1 Page with new subpages -->
+        <div id="page-csr-c1" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Combined Standard Resources: Chemistry 1</h2>
+                <hr>
+                <p>Select a topic to view its resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-c1-basic-concepts">Some Basic Concepts In Chemistry</a></li>
+                    <li><a class="nav-link" data-page="csr-c1-organic-chemistry">Organic Chemistry</a></li>
+                    <li><a class="nav-link" data-page="csr-c1-chemical-equilibrium">Chemical Equilibrium</a></li>
+                    <li><a class="nav-link" data-page="csr-c1-ionic-equilibrium">Ionic Equilibrium</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- CSR Chemistry 2 Page with new subpages -->
+        <div id="page-csr-c2" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Combined Standard Resources: Chemistry 2</h2>
+                <hr>
+                <p>Select a topic to view its resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-c2-atomic-structure">Atomic Structure</a></li>
+                    <li><a class="nav-link" data-page="csr-c2-chemical-bonding">Chemical Bonding</a></li>
+                    <li><a class="nav-link" data-page="csr-c2-behaviour-gases">Behaviour Of Gases</a></li>
+                </ul>
+            </section>
+        </div>
+
         <div id="page-csr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Exam Corner</h2><p>Content for Exam Corner goes here.</p></section></div>
 
+        <!-- ================================================================== -->
+        <!-- IIT SUBPAGES: Developed Resources (DR) -->
+        <!-- ================================================================== -->
+
+        <!-- DR Maths 1 Page with new subpages -->
         <div id="page-dr-m1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -350,6 +401,7 @@
             </section>
         </div>
 
+        <!-- DR Maths 2 Page with new subpages -->
         <div id="page-dr-m2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -363,6 +415,7 @@
             </section>
         </div>
 
+        <!-- DR Physics 1 Page with new subpages -->
         <div id="page-dr-p1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -417,6 +470,7 @@
             </section>
         </div>
 
+        <!-- DR Physics 2 Page with new subpages -->
         <div id="page-dr-p2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -436,10 +490,40 @@
             </section>
         </div>
 
-        <div id="page-dr-c1" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Chemistry 1</h2><p>Custom code for Chemistry 1 goes here.</p></section></div>
-        <div id="page-dr-c2" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Chemistry 2</h2><p>Custom code for Chemistry 2 goes here.</p></section></div>
+        <!-- DR Chemistry 1 Page with new subpages -->
+        <div id="page-dr-c1" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Developed Resources: Chemistry 1</h2>
+                <hr>
+                <p>Select a topic to explore interactive tools and custom resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-c1-basic-concepts">Some Basic Concepts In Chemistry</a></li>
+                    <li><a class="nav-link" data-page="dr-c1-organic-chemistry">Organic Chemistry</a></li>
+                    <li><a class="nav-link" data-page="dr-c1-chemical-equilibrium">Chemical Equilibrium</a></li>
+                    <li><a class="nav-link" data-page="dr-c1-ionic-equilibrium">Ionic Equilibrium</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- DR Chemistry 2 Page with new subpages -->
+        <div id="page-dr-c2" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
+                <h2>Developed Resources: Chemistry 2</h2>
+                <hr>
+                <p>Select a topic to explore interactive tools and custom resources.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-c2-atomic-structure">Atomic Structure</a></li>
+                    <li><a class="nav-link" data-page="dr-c2-chemical-bonding">Chemical Bonding</a></li>
+                    <li><a class="nav-link" data-page="dr-c2-behaviour-gases">Behaviour Of Gases</a></li>
+                </ul>
+            </section>
+        </div>
+
         <div id="page-dr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Exam Corner</h2><p>Custom code for Exam Corner goes here.</p></section></div>
         
+        <!-- All CSR M1 subpages are empty placeholders -->
         <div id="page-csr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Compound Angles</h2><hr><p>Content for Compound Angles goes here.</p></section></div>
         <div id="page-csr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Multiple and Sub Multiple Angles</h2><hr><p>Content for Multiple and Sub Multiple Angles goes here.</p></section></div>
         <div id="page-csr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Partial Fractions</h2><hr><p>Content for Partial Fractions goes here.</p></section></div>
@@ -448,9 +532,11 @@
         <div id="page-csr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Coordinate Geometry</h2><hr><p>Content for Coordinate Geometry goes here.</p></section></div>
         <div id="page-csr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Matrices</h2><hr><p>Content for Matrices goes here.</p></section></div>
         
+        <!-- All CSR M2 subpages are empty placeholders -->
         <div id="page-csr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Relations</h2><hr><p>Content for Relations goes here.</p></section></div>
         <div id="page-csr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Quadratic Expressions and Equations</h2><hr><p>Content for Quadratic Expressions and Equations goes here.</p></section></div>
 
+        <!-- All CSR P1 subpages are empty placeholders -->
         <div id="page-csr-p1-basics-math" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back</button><h2>CSR: Basics of Mathematics</h2><hr><p>Content for Basics of Mathematics goes here.</p></section></div>
         <div id="page-csr-p1-vectors-basics" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1-vectors">← Back</button><h2>CSR: Basics of Vectors</h2><hr><p>Content for Basics of Vectors goes here.</p></section></div>
         <div id="page-csr-p1-vectors-addition-subtraction" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1-vectors">← Back</button><h2>CSR: Addition & Subtraction</h2><hr><p>Content for Addition & Subtraction goes here.</p></section></div>
@@ -475,11 +561,24 @@
         <div id="page-csr-p1-thermal-properties" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back to P1</button><h2>CSR: Thermal Properties of Matter</h2><hr><p>This page acts as a parent for Thermal Properties of Matter subpages.</p><ul><li><a class="nav-link" data-page="csr-p1-thermal-properties-solids">Solids</a></li><li><a class="nav-link" data-page="csr-p1-thermal-properties-liquids">Liquids</a></li><li><a class="nav-link" data-page="csr-p1-thermal-properties-gases">Gases</a></li></ul></section></div>
         <div id="page-csr-p1-calorimetry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back</button><h2>CSR: Calorimetry</h2><hr><p>Content for Calorimetry goes here.</p></section></div>
 
+        <!-- All CSR P2 subpages are empty placeholders -->
         <div id="page-csr-p2-newton-laws-motion-lcm" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2-newton-laws-motion">← Back</button><h2>CSR: Laws linear momentum & LCM</h2><hr><p>Content for Laws linear momentum & LCM goes here.</p></section></div>
         <div id="page-csr-p2-newton-laws-motion-connected-bodies" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2-newton-laws-motion">← Back</button><h2>CSR: Normal force Apparent Weight Connected Bodies</h2><hr><p>Content for Normal force Apparent Weight Connected Bodies goes here.</p></section></div>
         <div id="page-csr-p2-newton-laws-motion" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2">← Back to P2</button><h2>CSR: Newton Laws of Motion</h2><hr><p>This page acts as a parent for Newton Laws of Motion subpages.</p><ul><li><a class="nav-link" data-page="csr-p2-newton-laws-motion-lcm">Laws linear momentum & LCM</a></li><li><a class="nav-link" data-page="csr-p2-newton-laws-motion-connected-bodies">Normal force Apparent Weight Connected Bodies</a></li></ul></section></div>
         <div id="page-csr-p2-collisions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2">← Back</button><h2>CSR: Collisions</h2><hr><p>Content for Collisions goes here.</p></section></div>
 
+        <!-- All CSR C1 subpages are empty placeholders -->
+        <div id="page-csr-c1-basic-concepts" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Some Basic Concepts In Chemistry</h2><hr><p>Content for Some Basic Concepts In Chemistry goes here.</p></section></div>
+        <div id="page-csr-c1-organic-chemistry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Organic Chemistry</h2><hr><p>Content for Organic Chemistry goes here.</p></section></div>
+        <div id="page-csr-c1-chemical-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Chemical Equilibrium</h2><hr><p>Content for Chemical Equilibrium goes here.</p></section></div>
+        <div id="page-csr-c1-ionic-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Ionic Equilibrium</h2><hr><p>Content for Ionic Equilibrium goes here.</p></section></div>
+
+        <!-- All CSR C2 subpages are empty placeholders -->
+        <div id="page-csr-c2-atomic-structure" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Atomic Structure</h2><hr><p>Content for Atomic Structure goes here.</p></section></div>
+        <div id="page-csr-c2-chemical-bonding" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Chemical Bonding</h2><hr><p>Content for Chemical Bonding goes here.</p></section></div>
+        <div id="page-csr-c2-behaviour-gases" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Behaviour Of Gases</h2><hr><p>Content for Behaviour Of Gases goes here.</p></section></div>
+
+        <!-- All DR M1 subpages are empty placeholders -->
         <div id="page-dr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Compound Angles</h2><hr><p>Custom code for Compound Angles goes here.</p></section></div>
         <div id="page-dr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Multiple and Sub Multiple Angles</h2><hr><p>Custom code for Multiple and Sub Multiple Angles goes here.</p></section></div>
         <div id="page-dr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Partial Fractions</h2><hr><p>Custom code for Partial Fractions goes here.</p></section></div>
@@ -488,12 +587,14 @@
         <div id="page-dr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Coordinate Geometry</h2><hr><p>Custom code for Coordinate Geometry goes here.</p></section></div>
         <div id="page-dr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Matrices</h2><hr><p>Custom code for Matrices goes here.</p></section></div>
         
+        <!-- All DR M2 subpages are empty placeholders -->
         <div id="page-dr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Relations</h2><hr><p>Custom code for Relations goes here.</p></section></div>
         <div id="page-dr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Quadratic Expressions and Equations</h2><hr><p>Custom code for Quadratic Expressions and Equations goes here.</p></section></div>
 
+        <!-- All DR P1 subpages are empty placeholders -->
         <div id="page-dr-p1-basics-math" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back</button><h2>DR: Basics of Mathematics</h2><hr><p>Custom code for Basics of Mathematics goes here.</p></section></div>
         <div id="page-dr-p1-vectors-basics" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Basics of Vectors</h2><hr><p>Custom code for Basics of Vectors goes here.</p></section></div>
-        <div id="page-dr-p1-vectors-addition-subtraction" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Addition & Subtraction</h2><hr><p>Custom code for Addition & Subtraction goes here.</p></section></div>
+        <div id="page-dr-p1-vectors-addition-subtraction" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Addition & Subtraction</h2><hr><p>Custom code for Addition & Subtraction goes here.</p></p></section></div>
         <div id="page-dr-p1-vectors-multiplication" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Multiplication</h2><hr><p>Custom code for Multiplication goes here.</p></section></div>
         <div id="page-dr-p1-vectors-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Equilibrium</h2><hr><p>Custom code for Equilibrium goes here.</p></section></div>
         <div id="page-dr-p1-vectors" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back to P1</button><h2>DR: Vectors</h2><hr><p>This page acts as a parent for Vector subpages.</p><ul><li><a class="nav-link" data-page="dr-p1-vectors-basics">Basics of Vectors</a></li><li><a class="nav-link" data-page="dr-p1-vectors-addition-subtraction">Addition & Subtraction</a></li><li><a class="nav-link" data-page="dr-p1-vectors-multiplication">Multiplication</a></li><li><a class="nav-link" data-page="dr-p1-vectors-equilibrium">Equilibrium</a></li></ul></section></div>
@@ -515,11 +616,26 @@
         <div id="page-dr-p1-thermal-properties" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back to P1</button><h2>DR: Thermal Properties of Matter</h2><hr><p>This page acts as a parent for Thermal Properties of Matter subpages.</p><ul><li><a class="nav-link" data-page="dr-p1-thermal-properties-solids">Solids</a></li><li><a class="nav-link" data-page="dr-p1-thermal-properties-liquids">Liquids</a></li><li><a class="nav-link" data-page="dr-p1-thermal-properties-gases">Gases</a></li></ul></section></div>
         <div id="page-dr-p1-calorimetry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back</button><h2>DR: Calorimetry</h2><hr><p>Custom code for Calorimetry goes here.</p></section></div>
 
+        <!-- All DR P2 subpages are empty placeholders -->
         <div id="page-dr-p2-newton-laws-motion-lcm" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2-newton-laws-motion">← Back</button><h2>DR: Laws linear momentum & LCM</h2><hr><p>Custom code for Laws linear momentum & LCM goes here.</p></section></div>
         <div id="page-dr-p2-newton-laws-motion-connected-bodies" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2-newton-laws-motion">← Back</button><h2>DR: Normal force Apparent Weight Connected Bodies</h2><hr><p>Custom code for Normal force Apparent Weight Connected Bodies goes here.</p></section></div>
         <div id="page-dr-p2-newton-laws-motion" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2">← Back to P2</button><h2>DR: Newton Laws of Motion</h2><hr><p>This page acts as a parent for Newton Laws of Motion subpages.</p><ul><li><a class="nav-link" data-page="dr-p2-newton-laws-motion-lcm">Laws linear momentum & LCM</a></li><li><a class="nav-link" data-page="dr-p2-newton-laws-motion-connected-bodies">Normal force Apparent Weight Connected Bodies</a></li></ul></section></div>
         <div id="page-dr-p2-collisions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2">← Back</button><h2>DR: Collisions</h2><hr><p>Custom code for Collisions goes here.</p></section></div>
         
+        <!-- All DR C1 subpages are empty placeholders -->
+        <div id="page-dr-c1-basic-concepts" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Some Basic Concepts In Chemistry</h2><hr><p>Custom code for Some Basic Concepts In Chemistry goes here.</p></section></div>
+        <div id="page-dr-c1-organic-chemistry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Organic Chemistry</h2><hr><p>Custom code for Organic Chemistry goes here.</p></section></div>
+        <div id="page-dr-c1-chemical-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Chemical Equilibrium</h2><hr><p>Custom code for Chemical Equilibrium goes here.</p></section></div>
+        <div id="page-dr-c1-ionic-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Ionic Equilibrium</h2><hr><p>Custom code for Ionic Equilibrium goes here.</p></section></div>
+
+        <!-- All DR C2 subpages are empty placeholders -->
+        <div id="page-dr-c2-atomic-structure" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Atomic Structure</h2><hr><p>Custom code for Atomic Structure goes here.</p></section></div>
+        <div id="page-dr-c2-chemical-bonding" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Chemical Bonding</h2><hr><p>Custom code for Chemical Bonding goes here.</p></section></div>
+        <div id="page-dr-c2-behaviour-gases" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Behaviour Of Gases</h2><hr><p>Custom code for Behaviour Of Gases goes here.</p></section></div>
+
+        <!-- ================================================================== -->
+        <!-- EXAMPLE: NEW CUSTOM PAGE (linked from Home) -->
+        <!-- ================================================================== -->
         <div id="page-custom-section-overview" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="home">← Back to Home</button>
@@ -547,6 +663,7 @@
             </section>
         </div>
 
+        <!-- EXAMPLE: MICRO-PAGES for the new Custom Section -->
         <div id="page-aptitude-math" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
@@ -559,7 +676,8 @@
                     <li><a href="https://www.dummies.com/education/math/percentages-for-dummies-cheat-sheet/" target="_blank">Percentages Cheat Sheet</a></li>
                 </ul>
                 <p><strong>Practice Question:</strong> If an item costs $120 and is discounted by 25%, what is the final price?</p>
-                </section>
+                <!-- You can add an interactive percentage calculator here -->
+            </section>
         </div>
 
         <div id="page-aptitude-verbal" class="page">
@@ -621,6 +739,7 @@ int main() {
         <p>&copy; 2025 Academic Assistant. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript is embedded directly inside the HTML file -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
