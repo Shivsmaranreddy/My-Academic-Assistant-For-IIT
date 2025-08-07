@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Assistant</title>
     
-    <!-- CSS is embedded directly inside the HTML file -->
     <style>
         /* --- General Setup --- */
         :root {
@@ -163,7 +162,6 @@
         <h1>My Academic Assistant</h1>
         <nav class="main-nav">
             <ul>
-                <!-- These links use data-page attributes to tell JavaScript which page to show -->
                 <li><a data-page="home" class="nav-link active">Home</a></li>
                 <li><a data-page="iit" class="nav-link">IIT</a></li>
             </ul>
@@ -172,9 +170,6 @@
 
     <main class="main-content">
 
-        <!-- ====================================================== -->
-        <!-- HOME PAGE -->
-        <!-- ====================================================== -->
         <div id="page-home" class="page active">
             <section class="card">
                 <h2>Welcome Back!</h2>
@@ -186,18 +181,9 @@
                     <p>Access all your IIT preparation materials and tools.</p>
                     <a data-page="iit" class="button nav-link">View IIT Dashboard</a>
                 </div>
-                <!-- Removed the "Today's Focus Video" card from the home page as requested -->
-                <div class="card">
-                    <h3>Your Custom Section</h3>
-                    <p>This is where you can add another card for your specific content.</p>
-                    <a data-page="custom-section-overview" class="button nav-link">Explore Custom</a>
-                </div>
             </section>
         </div>
 
-        <!-- ====================================================== -->
-        <!-- IIT DASHBOARD PAGE -->
-        <!-- ====================================================== -->
         <div id="page-iit" class="page">
             <section class="card">
                 <h2>IIT Preparation Dashboard</h2>
@@ -233,11 +219,6 @@
             </div>
         </div>
 
-        <!-- ================================================================== -->
-        <!-- IIT SUBPAGES: Combined Standard Resources (CSR) -->
-        <!-- ================================================================== -->
-        
-        <!-- CSR Maths 1 Page with new subpages -->
         <div id="page-csr-m1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -256,7 +237,6 @@
             </section>
         </div>
         
-        <!-- CSR Maths 2 Page with new subpages -->
         <div id="page-csr-m2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -270,7 +250,6 @@
             </section>
         </div>
         
-        <!-- CSR Physics 1 Page with new subpages -->
         <div id="page-csr-p1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -325,7 +304,6 @@
             </section>
         </div>
 
-        <!-- CSR Physics 2 Page with new subpages -->
         <div id="page-csr-p2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -345,7 +323,6 @@
             </section>
         </div>
 
-        <!-- CSR Chemistry 1 Page with new subpages -->
         <div id="page-csr-c1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -361,7 +338,6 @@
             </section>
         </div>
 
-        <!-- CSR Chemistry 2 Page with new subpages -->
         <div id="page-csr-c2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -378,11 +354,6 @@
 
         <div id="page-csr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>CSR: Exam Corner</h2><p>Content for Exam Corner goes here.</p></section></div>
 
-        <!-- ================================================================== -->
-        <!-- IIT SUBPAGES: Developed Resources (DR) -->
-        <!-- ================================================================== -->
-
-        <!-- DR Maths 1 Page with new subpages -->
         <div id="page-dr-m1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -401,7 +372,6 @@
             </section>
         </div>
 
-        <!-- DR Maths 2 Page with new subpages -->
         <div id="page-dr-m2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -415,7 +385,6 @@
             </section>
         </div>
 
-        <!-- DR Physics 1 Page with new subpages -->
         <div id="page-dr-p1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -470,7 +439,6 @@
             </section>
         </div>
 
-        <!-- DR Physics 2 Page with new subpages -->
         <div id="page-dr-p2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -490,7 +458,6 @@
             </section>
         </div>
 
-        <!-- DR Chemistry 1 Page with new subpages -->
         <div id="page-dr-c1" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -506,7 +473,6 @@
             </section>
         </div>
 
-        <!-- DR Chemistry 2 Page with new subpages -->
         <div id="page-dr-c2" class="page">
             <section class="card">
                 <button class="back-button nav-link" data-page="iit">← Back to IIT Dashboard</button>
@@ -523,20 +489,170 @@
 
         <div id="page-dr-exam-corner" class="page"><section class="card"><button class="back-button nav-link" data-page="iit">← Back</button><h2>DR: Exam Corner</h2><p>Custom code for Exam Corner goes here.</p></section></div>
         
-        <!-- All CSR M1 subpages are empty placeholders -->
-        <div id="page-csr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Compound Angles</h2><hr><p>Content for Compound Angles goes here.</p></section></div>
-        <div id="page-csr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Multiple and Sub Multiple Angles</h2><hr><p>Content for Multiple and Sub Multiple Angles goes here.</p></section></div>
-        <div id="page-csr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Partial Fractions</h2><hr><p>Content for Partial Fractions goes here.</p></section></div>
-        <div id="page-csr-m1-progressions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Progressions</h2><hr><p>Content for Progressions goes here.</p></section></div>
-        <div id="page-csr-m1-binomial-theorem" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Binomial Theorem</h2><hr><p>Content for Binomial Theorem goes here.</p></section></div>
-        <div id="page-csr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Coordinate Geometry</h2><hr><p>Content for Coordinate Geometry goes here.</p></section></div>
-        <div id="page-csr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1">← Back</button><h2>CSR: Matrices</h2><hr><p>Content for Matrices goes here.</p></section></div>
-        
-        <!-- All CSR M2 subpages are empty placeholders -->
-        <div id="page-csr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Relations</h2><hr><p>Content for Relations goes here.</p></section></div>
-        <div id="page-csr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2">← Back</button><h2>CSR: Quadratic Expressions and Equations</h2><hr><p>Content for Quadratic Expressions and Equations goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Compound Angles</h2>
+                <hr>
+                <p>Select a subpage for resources on Compound Angles.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-compound-angles-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Multiple and Sub Multiple Angles</h2>
+                <hr>
+                <p>Select a subpage for resources on Multiple and Sub Multiple Angles.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-multiple-sub-multiple-angles-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-partial-fractions" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Partial Fractions</h2>
+                <hr>
+                <p>Select a subpage for resources on Partial Fractions.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-partial-fractions-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-progressions" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Progressions</h2>
+                <hr>
+                <p>Select a subpage for resources on Progressions.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-progressions-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-binomial-theorem" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Binomial Theorem</h2>
+                <hr>
+                <p>Select a subpage for resources on Binomial Theorem.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-binomial-theorem-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-coordinate-geometry" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Coordinate Geometry</h2>
+                <hr>
+                <p>Select a subpage for resources on Coordinate Geometry.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-coordinate-geometry-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m1-matrices" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m1">← Back to M1</button>
+                <h2>CSR: Matrices</h2>
+                <hr>
+                <p>Select a subpage for resources on Matrices.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m1-matrices-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
 
-        <!-- All CSR P1 subpages are empty placeholders -->
+        <div id="page-csr-m2-relations" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m2">← Back to M2</button>
+                <h2>CSR: Relations</h2>
+                <hr>
+                <p>Select a subpage for resources on Relations.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m2-relations-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-relations-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-csr-m2-quadratic-expressions-equations" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="csr-m2">← Back to M2</button>
+                <h2>CSR: Quadratic Expressions and Equations</h2>
+                <hr>
+                <p>Select a subpage for resources on Quadratic Expressions and Equations.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="csr-m2-quadratic-expressions-equations-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        
         <div id="page-csr-p1-basics-math" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back</button><h2>CSR: Basics of Mathematics</h2><hr><p>Content for Basics of Mathematics goes here.</p></section></div>
         <div id="page-csr-p1-vectors-basics" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1-vectors">← Back</button><h2>CSR: Basics of Vectors</h2><hr><p>Content for Basics of Vectors goes here.</p></section></div>
         <div id="page-csr-p1-vectors-addition-subtraction" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1-vectors">← Back</button><h2>CSR: Addition & Subtraction</h2><hr><p>Content for Addition & Subtraction goes here.</p></section></div>
@@ -561,37 +677,184 @@
         <div id="page-csr-p1-thermal-properties" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back to P1</button><h2>CSR: Thermal Properties of Matter</h2><hr><p>This page acts as a parent for Thermal Properties of Matter subpages.</p><ul><li><a class="nav-link" data-page="csr-p1-thermal-properties-solids">Solids</a></li><li><a class="nav-link" data-page="csr-p1-thermal-properties-liquids">Liquids</a></li><li><a class="nav-link" data-page="csr-p1-thermal-properties-gases">Gases</a></li></ul></section></div>
         <div id="page-csr-p1-calorimetry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p1">← Back</button><h2>CSR: Calorimetry</h2><hr><p>Content for Calorimetry goes here.</p></section></div>
 
-        <!-- All CSR P2 subpages are empty placeholders -->
         <div id="page-csr-p2-newton-laws-motion-lcm" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2-newton-laws-motion">← Back</button><h2>CSR: Laws linear momentum & LCM</h2><hr><p>Content for Laws linear momentum & LCM goes here.</p></section></div>
         <div id="page-csr-p2-newton-laws-motion-connected-bodies" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2-newton-laws-motion">← Back</button><h2>CSR: Normal force Apparent Weight Connected Bodies</h2><hr><p>Content for Normal force Apparent Weight Connected Bodies goes here.</p></section></div>
         <div id="page-csr-p2-newton-laws-motion" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2">← Back to P2</button><h2>CSR: Newton Laws of Motion</h2><hr><p>This page acts as a parent for Newton Laws of Motion subpages.</p><ul><li><a class="nav-link" data-page="csr-p2-newton-laws-motion-lcm">Laws linear momentum & LCM</a></li><li><a class="nav-link" data-page="csr-p2-newton-laws-motion-connected-bodies">Normal force Apparent Weight Connected Bodies</a></li></ul></section></div>
         <div id="page-csr-p2-collisions" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-p2">← Back</button><h2>CSR: Collisions</h2><hr><p>Content for Collisions goes here.</p></section></div>
 
-        <!-- All CSR C1 subpages are empty placeholders -->
         <div id="page-csr-c1-basic-concepts" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Some Basic Concepts In Chemistry</h2><hr><p>Content for Some Basic Concepts In Chemistry goes here.</p></section></div>
         <div id="page-csr-c1-organic-chemistry" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Organic Chemistry</h2><hr><p>Content for Organic Chemistry goes here.</p></section></div>
         <div id="page-csr-c1-chemical-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Chemical Equilibrium</h2><hr><p>Content for Chemical Equilibrium goes here.</p></section></div>
         <div id="page-csr-c1-ionic-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c1">← Back</button><h2>CSR: Ionic Equilibrium</h2><hr><p>Content for Ionic Equilibrium goes here.</p></section></div>
 
-        <!-- All CSR C2 subpages are empty placeholders -->
         <div id="page-csr-c2-atomic-structure" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Atomic Structure</h2><hr><p>Content for Atomic Structure goes here.</p></section></div>
         <div id="page-csr-c2-chemical-bonding" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Chemical Bonding</h2><hr><p>Content for Chemical Bonding goes here.</p></section></div>
         <div id="page-csr-c2-behaviour-gases" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-c2">← Back</button><h2>CSR: Behaviour Of Gases</h2><hr><p>Content for Behaviour Of Gases goes here.</p></section></div>
-
-        <!-- All DR M1 subpages are empty placeholders -->
-        <div id="page-dr-m1-compound-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Compound Angles</h2><hr><p>Custom code for Compound Angles goes here.</p></section></div>
-        <div id="page-dr-m1-multiple-sub-multiple-angles" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Multiple and Sub Multiple Angles</h2><hr><p>Custom code for Multiple and Sub Multiple Angles goes here.</p></section></div>
-        <div id="page-dr-m1-partial-fractions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Partial Fractions</h2><hr><p>Custom code for Partial Fractions goes here.</p></section></div>
-        <div id="page-dr-m1-progressions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Progressions</h2><hr><p>Custom code for Progressions goes here.</p></section></div>
-        <div id="page-dr-m1-binomial-theorem" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Binomial Theorem</h2><hr><p>Custom code for Binomial Theorem goes here.</p></section></div>
-        <div id="page-dr-m1-coordinate-geometry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Coordinate Geometry</h2><hr><p>Custom code for Coordinate Geometry goes here.</p></section></div>
-        <div id="page-dr-m1-matrices" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1">← Back</button><h2>DR: Matrices</h2><hr><p>Custom code for Matrices goes here.</p></section></div>
         
-        <!-- All DR M2 subpages are empty placeholders -->
-        <div id="page-dr-m2-relations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Relations</h2><hr><p>Custom code for Relations goes here.</p></section></div>
-        <div id="page-dr-m2-quadratic-expressions-equations" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2">← Back</button><h2>DR: Quadratic Expressions and Equations</h2><hr><p>Custom code for Quadratic Expressions and Equations goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Compound Angles</h2>
+                <hr>
+                <p>Select a subpage for resources on Compound Angles.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-compound-angles-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Multiple and Sub Multiple Angles</h2>
+                <hr>
+                <p>Select a subpage for resources on Multiple and Sub Multiple Angles.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-multiple-sub-multiple-angles-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-partial-fractions" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Partial Fractions</h2>
+                <hr>
+                <p>Select a subpage for resources on Partial Fractions.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-partial-fractions-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-progressions" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Progressions</h2>
+                <hr>
+                <p>Select a subpage for resources on Progressions.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-progressions-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-binomial-theorem" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Binomial Theorem</h2>
+                <hr>
+                <p>Select a subpage for resources on Binomial Theorem.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-binomial-theorem-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-coordinate-geometry" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Coordinate Geometry</h2>
+                <hr>
+                <p>Select a subpage for resources on Coordinate Geometry.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-coordinate-geometry-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m1-matrices" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m1">← Back to M1</button>
+                <h2>DR: Matrices</h2>
+                <hr>
+                <p>Select a subpage for resources on Matrices.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m1-matrices-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
 
-        <!-- All DR P1 subpages are empty placeholders -->
+        <div id="page-dr-m2-relations" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m2">← Back to M2</button>
+                <h2>DR: Relations</h2>
+                <hr>
+                <p>Select a subpage for resources on Relations.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m2-relations-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-relations-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        <div id="page-dr-m2-quadratic-expressions-equations" class="page">
+            <section class="card">
+                <button class="back-button nav-link" data-page="dr-m2">← Back to M2</button>
+                <h2>DR: Quadratic Expressions and Equations</h2>
+                <hr>
+                <p>Select a subpage for resources on Quadratic Expressions and Equations.</p>
+                <ul>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-synopsis">Synopsis</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-iic">IIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-iah">IAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-eic">EIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-eah">EAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-pic">PIC</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-pah">PAH</a></li>
+                    <li><a class="nav-link" data-page="dr-m2-quadratic-expressions-equations-virtue">VIRTUE</a></li>
+                </ul>
+            </section>
+        </div>
+        
         <div id="page-dr-p1-basics-math" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back</button><h2>DR: Basics of Mathematics</h2><hr><p>Custom code for Basics of Mathematics goes here.</p></section></div>
         <div id="page-dr-p1-vectors-basics" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Basics of Vectors</h2><hr><p>Custom code for Basics of Vectors goes here.</p></section></div>
         <div id="page-dr-p1-vectors-addition-subtraction" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1-vectors">← Back</button><h2>DR: Addition & Subtraction</h2><hr><p>Custom code for Addition & Subtraction goes here.</p></p></section></div>
@@ -616,130 +879,187 @@
         <div id="page-dr-p1-thermal-properties" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back to P1</button><h2>DR: Thermal Properties of Matter</h2><hr><p>This page acts as a parent for Thermal Properties of Matter subpages.</p><ul><li><a class="nav-link" data-page="dr-p1-thermal-properties-solids">Solids</a></li><li><a class="nav-link" data-page="dr-p1-thermal-properties-liquids">Liquids</a></li><li><a class="nav-link" data-page="dr-p1-thermal-properties-gases">Gases</a></li></ul></section></div>
         <div id="page-dr-p1-calorimetry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p1">← Back</button><h2>DR: Calorimetry</h2><hr><p>Custom code for Calorimetry goes here.</p></section></div>
 
-        <!-- All DR P2 subpages are empty placeholders -->
         <div id="page-dr-p2-newton-laws-motion-lcm" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2-newton-laws-motion">← Back</button><h2>DR: Laws linear momentum & LCM</h2><hr><p>Custom code for Laws linear momentum & LCM goes here.</p></section></div>
         <div id="page-dr-p2-newton-laws-motion-connected-bodies" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2-newton-laws-motion">← Back</button><h2>DR: Normal force Apparent Weight Connected Bodies</h2><hr><p>Custom code for Normal force Apparent Weight Connected Bodies goes here.</p></section></div>
         <div id="page-dr-p2-newton-laws-motion" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2">← Back to P2</button><h2>DR: Newton Laws of Motion</h2><hr><p>This page acts as a parent for Newton Laws of Motion subpages.</p><ul><li><a class="nav-link" data-page="dr-p2-newton-laws-motion-lcm">Laws linear momentum & LCM</a></li><li><a class="nav-link" data-page="dr-p2-newton-laws-motion-connected-bodies">Normal force Apparent Weight Connected Bodies</a></li></ul></section></div>
         <div id="page-dr-p2-collisions" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-p2">← Back</button><h2>DR: Collisions</h2><hr><p>Custom code for Collisions goes here.</p></section></div>
         
-        <!-- All DR C1 subpages are empty placeholders -->
         <div id="page-dr-c1-basic-concepts" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Some Basic Concepts In Chemistry</h2><hr><p>Custom code for Some Basic Concepts In Chemistry goes here.</p></section></div>
         <div id="page-dr-c1-organic-chemistry" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Organic Chemistry</h2><hr><p>Custom code for Organic Chemistry goes here.</p></section></div>
         <div id="page-dr-c1-chemical-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Chemical Equilibrium</h2><hr><p>Custom code for Chemical Equilibrium goes here.</p></section></div>
         <div id="page-dr-c1-ionic-equilibrium" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c1">← Back</button><h2>DR: Ionic Equilibrium</h2><hr><p>Custom code for Ionic Equilibrium goes here.</p></section></div>
 
-        <!-- All DR C2 subpages are empty placeholders -->
         <div id="page-dr-c2-atomic-structure" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Atomic Structure</h2><hr><p>Custom code for Atomic Structure goes here.</p></section></div>
         <div id="page-dr-c2-chemical-bonding" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Chemical Bonding</h2><hr><p>Custom code for Chemical Bonding goes here.</p></section></div>
         <div id="page-dr-c2-behaviour-gases" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-c2">← Back</button><h2>DR: Behaviour Of Gases</h2><hr><p>Custom code for Behaviour Of Gases goes here.</p></section></div>
 
-        <!-- ================================================================== -->
-        <!-- EXAMPLE: NEW CUSTOM PAGE (linked from Home) -->
-        <!-- ================================================================== -->
-        <div id="page-custom-section-overview" class="page">
-            <section class="card">
-                <button class="back-button nav-link" data-page="home">← Back to Home</button>
-                <h2>My Custom Study Materials</h2>
-                <hr>
-                <p>This is a new section where you can organize any other specific study materials not directly related to IIT, or additional resources.</p>
-                <div class="card-container">
-                    <div class="card">
-                        <h3>General Aptitude</h3>
-                        <p>Resources for improving general problem-solving skills.</p>
-                        <ul>
-                            <li><a class="nav-link" data-page="aptitude-math">Quantitative Aptitude</a></li>
-                            <li><a class="nav-link" data-page="aptitude-verbal">Verbal Reasoning</a></li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Programming Fundamentals</h3>
-                        <p>Beginner guides and practice problems for coding.</p>
-                        <ul>
-                            <li><a class="nav-link" data-page="programming-python">Python Basics</a></li>
-                            <li><a class="nav-link" data-page="programming-cpp">C++ Fundamentals</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <div id="page-csr-m1-compound-angles-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - Synopsis</h2><hr><p>Content for Compound Angles Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - IIC</h2><hr><p>Content for Compound Angles IIC goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - IAH</h2><hr><p>Content for Compound Angles IAH goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - EIC</h2><hr><p>Content for Compound Angles EIC goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - EAH</h2><hr><p>Content for Compound Angles EAH goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - PIC</h2><hr><p>Content for Compound Angles PIC goes here.</p></section></div>
+        <div id="page-csr-m1-compound-angles-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - PAH</h2><hr><p>Content for Compound Angles PAH goes here.</p></p></section></div>
+        <div id="page-csr-m1-compound-angles-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-compound-angles">← Back</button><h2>CSR: Compound Angles - VIRTUE</h2><hr><p>Content for Compound Angles VIRTUE goes here.</p></section></div>
+        
+        <div id="page-csr-m1-multiple-sub-multiple-angles-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - Synopsis</h2><hr><p>Content for Multiple and Sub Multiple Angles Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - IIC</h2><hr><p>Content for Multiple and Sub Multiple Angles IIC goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - IAH</h2><hr><p>Content for Multiple and Sub Multiple Angles IAH goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - EIC</h2><hr><p>Content for Multiple and Sub Multiple Angles EIC goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - EAH</h2><hr><p>Content for Multiple and Sub Multiple Angles EAH goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - PIC</h2><hr><p>Content for Multiple and Sub Multiple Angles PIC goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - PAH</h2><hr><p>Content for Multiple and Sub Multiple Angles PAH goes here.</p></section></div>
+        <div id="page-csr-m1-multiple-sub-multiple-angles-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-multiple-sub-multiple-angles">← Back</button><h2>CSR: Multiple and Sub Multiple Angles - VIRTUE</h2><hr><p>Content for Multiple and Sub Multiple Angles VIRTUE goes here.</p></section></div>
 
-        <!-- EXAMPLE: MICRO-PAGES for the new Custom Section -->
-        <div id="page-aptitude-math" class="page">
-            <section class="card">
-                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
-                <h2>Quantitative Aptitude</h2>
-                <hr>
-                <p>This page focuses on mathematical aptitude topics.</p>
-                <h3>Topic: Percentages</h3>
-                <p>Understanding percentages is crucial for various competitive exams.</p>
-                <ul>
-                    <li><a href="https://www.dummies.com/education/math/percentages-for-dummies-cheat-sheet/" target="_blank">Percentages Cheat Sheet</a></li>
-                </ul>
-                <p><strong>Practice Question:</strong> If an item costs $120 and is discounted by 25%, what is the final price?</p>
-                <!-- You can add an interactive percentage calculator here -->
-            </section>
-        </div>
+        <div id="page-csr-m1-partial-fractions-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - Synopsis</h2><hr><p>Content for Partial Fractions Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - IIC</h2><hr><p>Content for Partial Fractions IIC goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - IAH</h2><hr><p>Content for Partial Fractions IAH goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - EIC</h2><hr><p>Content for Partial Fractions EIC goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - EAH</h2><hr><p>Content for Partial Fractions EAH goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - PIC</h2><hr><p>Content for Partial Fractions PIC goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - PAH</h2><hr><p>Content for Partial Fractions PAH goes here.</p></section></div>
+        <div id="page-csr-m1-partial-fractions-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-partial-fractions">← Back</button><h2>CSR: Partial Fractions - VIRTUE</h2><hr><p>Content for Partial Fractions VIRTUE goes here.</p></section></div>
 
-        <div id="page-aptitude-verbal" class="page">
-            <section class="card">
-                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
-                <h2>Verbal Reasoning</h2>
-                <hr>
-                <p>Improve your English language and logical reasoning skills.</p>
-                <h3>Topic: Reading Comprehension</h3>
-                <p>Tips and practice passages for reading comprehension.</p>
-                <p><strong>Exercise:</strong> Read the following passage and answer the questions below.</p>
-                <blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
-                    "The quick brown fox jumps over the lazy dog. This sentence is often used to display fonts because it contains all letters of the English alphabet."
-                </blockquote>
-                <p>1. What is the color of the fox?</p>
-                <p>2. What animal does the fox jump over?</p>
-            </section>
-        </div>
+        <div id="page-csr-m1-progressions-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - Synopsis</h2><hr><p>Content for Progressions Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - IIC</h2><hr><p>Content for Progressions IIC goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - IAH</h2><hr><p>Content for Progressions IAH goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - EIC</h2><hr><p>Content for Progressions EIC goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - EAH</h2><hr><p>Content for Progressions EAH goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - PIC</h2><hr><p>Content for Progressions PIC goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - PAH</h2><hr><p>Content for Progressions PAH goes here.</p></section></div>
+        <div id="page-csr-m1-progressions-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-progressions">← Back</button><h2>CSR: Progressions - VIRTUE</h2><hr><p>Content for Progressions VIRTUE goes here.</p></section></div>
 
-        <div id="page-programming-python" class="page">
-            <section class="card">
-                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
-                <h2>Python Basics</h2>
-                <hr>
-                <h3>Introduction to Variables</h3>
-                <p>Learn how to declare and use variables in Python.</p>
-                <pre style="background-color: #eee; padding: 10px; border-radius: 5px;"><code>
-# This is a Python comment
-name = "Alice"
-age = 30
-height = 1.75
+        <div id="page-csr-m1-binomial-theorem-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - Synopsis</h2><hr><p>Content for Binomial Theorem Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - IIC</h2><hr><p>Content for Binomial Theorem IIC goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - IAH</h2><hr><p>Content for Binomial Theorem IAH goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - EIC</h2><hr><p>Content for Binomial Theorem EIC goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - EAH</h2><hr><p>Content for Binomial Theorem EAH goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - PIC</h2><hr><p>Content for Binomial Theorem PIC goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - PAH</h2><hr><p>Content for Binomial Theorem PAH goes here.</p></section></div>
+        <div id="page-csr-m1-binomial-theorem-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-binomial-theorem">← Back</button><h2>CSR: Binomial Theorem - VIRTUE</h2><hr><p>Content for Binomial Theorem VIRTUE goes here.</p></section></div>
 
-print(f"Name: {name}, Age: {age}, Height: {height}")
-                </code></pre>
-                <p>You can embed interactive Python shells using services like repl.it or similar platforms if they offer embed codes.</p>
-            </section>
-        </div>
+        <div id="page-csr-m1-coordinate-geometry-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - Synopsis</h2><hr><p>Content for Coordinate Geometry Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - IIC</h2><hr><p>Content for Coordinate Geometry IIC goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - IAH</h2><hr><p>Content for Coordinate Geometry IAH goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - EIC</h2><hr><p>Content for Coordinate Geometry EIC goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - EAH</h2><hr><p>Content for Coordinate Geometry EAH goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - PIC</h2><hr><p>Content for Coordinate Geometry PIC goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - PAH</h2><hr><p>Content for Coordinate Geometry PAH goes here.</p></section></div>
+        <div id="page-csr-m1-coordinate-geometry-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-coordinate-geometry">← Back</button><h2>CSR: Coordinate Geometry - VIRTUE</h2><hr><p>Content for Coordinate Geometry VIRTUE goes here.</p></section></div>
 
-        <div id="page-programming-cpp" class="page">
-            <section class="card">
-                <button class="back-button nav-link" data-page="custom-section-overview">← Back to Custom Materials</button>
-                <h2>C++ Fundamentals</h2>
-                <hr>
-                <h3>Hello World in C++</h3>
-                <p>The classic first program in C++.</p>
-                <pre style="background-color: #eee; padding: 10px; border-radius: 5px;"><code>
-#include &lt;iostream&gt;
+        <div id="page-csr-m1-matrices-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - Synopsis</h2><hr><p>Content for Matrices Synopsis goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - IIC</h2><hr><p>Content for Matrices IIC goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - IAH</h2><hr><p>Content for Matrices IAH goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - EIC</h2><hr><p>Content for Matrices EIC goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - EAH</h2><hr><p>Content for Matrices EAH goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - PIC</h2><hr><p>Content for Matrices PIC goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - PAH</h2><hr><p>Content for Matrices PAH goes here.</p></section></div>
+        <div id="page-csr-m1-matrices-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m1-matrices">← Back</button><h2>CSR: Matrices - VIRTUE</h2><hr><p>Content for Matrices VIRTUE goes here.</p></section></div>
 
-int main() {
-    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
-    return 0;
-}
-                </code></pre>
-            </section>
-        </div>
+        <div id="page-csr-m2-relations-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - Synopsis</h2><hr><p>Content for Relations Synopsis goes here.</p></section></div>
+        <div id="page-csr-m2-relations-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - IIC</h2><hr><p>Content for Relations IIC goes here.</p></section></div>
+        <div id="page-csr-m2-relations-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - IAH</h2><hr><p>Content for Relations IAH goes here.</p></section></div>
+        <div id="page-csr-m2-relations-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - EIC</h2><hr><p>Content for Relations EIC goes here.</p></section></div>
+        <div id="page-csr-m2-relations-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - EAH</h2><hr><p>Content for Relations EAH goes here.</p></section></div>
+        <div id="page-csr-m2-relations-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - PIC</h2><hr><p>Content for Relations PIC goes here.</p></section></div>
+        <div id="page-csr-m2-relations-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - PAH</h2><hr><p>Content for Relations PAH goes here.</p></section></div>
+        <div id="page-csr-m2-relations-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-relations">← Back</button><h2>CSR: Relations - VIRTUE</h2><hr><p>Content for Relations VIRTUE goes here.</p></section></div>
+        
+        <div id="page-csr-m2-quadratic-expressions-equations-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - Synopsis</h2><hr><p>Content for Quadratic Expressions and Equations Synopsis goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - IIC</h2><hr><p>Content for Quadratic Expressions and Equations IIC goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - IAH</h2><hr><p>Content for Quadratic Expressions and Equations IAH goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - EIC</h2><hr><p>Content for Quadratic Expressions and Equations EIC goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - EAH</h2><hr><p>Content for Quadratic Expressions and Equations EAH goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - PIC</h2><hr><p>Content for Quadratic Expressions and Equations PIC goes here.</p></p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - PAH</h2><hr><p>Content for Quadratic Expressions and Equations PAH goes here.</p></section></div>
+        <div id="page-csr-m2-quadratic-expressions-equations-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="csr-m2-quadratic-expressions-equations">← Back</button><h2>CSR: Quadratic Expressions and Equations - VIRTUE</h2><hr><p>Content for Quadratic Expressions and Equations VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-compound-angles-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - Synopsis</h2><hr><p>Custom code for Compound Angles Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - IIC</h2><hr><p>Custom code for Compound Angles IIC goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - IAH</h2><hr><p>Custom code for Compound Angles IAH goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - EIC</h2><hr><p>Custom code for Compound Angles EIC goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - EAH</h2><hr><p>Custom code for Compound Angles EAH goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - PIC</h2><hr><p>Custom code for Compound Angles PIC goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - PAH</h2><hr><p>Custom code for Compound Angles PAH goes here.</p></section></div>
+        <div id="page-dr-m1-compound-angles-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-compound-angles">← Back</button><h2>DR: Compound Angles - VIRTUE</h2><hr><p>Custom code for Compound Angles VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-multiple-sub-multiple-angles-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - Synopsis</h2><hr><p>Custom code for Multiple and Sub Multiple Angles Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - IIC</h2><hr><p>Custom code for Multiple and Sub Multiple Angles IIC goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - IAH</h2><hr><p>Custom code for Multiple and Sub Multiple Angles IAH goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - EIC</h2><hr><p>Custom code for Multiple and Sub Multiple Angles EIC goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - EAH</h2><hr><p>Custom code for Multiple and Sub Multiple Angles EAH goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - PIC</h2><hr><p>Custom code for Multiple and Sub Multiple Angles PIC goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - PAH</h2><hr><p>Custom code for Multiple and Sub Multiple Angles PAH goes here.</p></section></div>
+        <div id="page-dr-m1-multiple-sub-multiple-angles-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-multiple-sub-multiple-angles">← Back</button><h2>DR: Multiple and Sub Multiple Angles - VIRTUE</h2><hr><p>Custom code for Multiple and Sub Multiple Angles VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-partial-fractions-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - Synopsis</h2><hr><p>Custom code for Partial Fractions Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - IIC</h2><hr><p>Custom code for Partial Fractions IIC goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - IAH</h2><hr><p>Custom code for Partial Fractions IAH goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - EIC</h2><hr><p>Custom code for Partial Fractions EIC goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - EAH</h2><hr><p>Custom code for Partial Fractions EAH goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - PIC</h2><hr><p>Custom code for Partial Fractions PIC goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - PAH</h2><hr><p>Custom code for Partial Fractions PAH goes here.</p></section></div>
+        <div id="page-dr-m1-partial-fractions-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-partial-fractions">← Back</button><h2>DR: Partial Fractions - VIRTUE</h2><hr><p>Custom code for Partial Fractions VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-progressions-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - Synopsis</h2><hr><p>Custom code for Progressions Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - IIC</h2><hr><p>Custom code for Progressions IIC goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - IAH</h2><hr><p>Custom code for Progressions IAH goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - EIC</h2><hr><p>Custom code for Progressions EIC goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - EAH</h2><hr><p>Custom code for Progressions EAH goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - PIC</h2><hr><p>Custom code for Progressions PIC goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - PAH</h2><hr><p>Custom code for Progressions PAH goes here.</p></section></div>
+        <div id="page-dr-m1-progressions-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-progressions">← Back</button><h2>DR: Progressions - VIRTUE</h2><hr><p>Custom code for Progressions VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-binomial-theorem-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - Synopsis</h2><hr><p>Custom code for Binomial Theorem Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - IIC</h2><hr><p>Custom code for Binomial Theorem IIC goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - IAH</h2><hr><p>Custom code for Binomial Theorem IAH goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - EIC</h2><hr><p>Custom code for Binomial Theorem EIC goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - EAH</h2><hr><p>Custom code for Binomial Theorem EAH goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - PIC</h2><hr><p>Custom code for Binomial Theorem PIC goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - PAH</h2><hr><p>Custom code for Binomial Theorem PAH goes here.</p></section></div>
+        <div id="page-dr-m1-binomial-theorem-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-binomial-theorem">← Back</button><h2>DR: Binomial Theorem - VIRTUE</h2><hr><p>Custom code for Binomial Theorem VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-coordinate-geometry-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - Synopsis</h2><hr><p>Custom code for Coordinate Geometry Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - IIC</h2><hr><p>Custom code for Coordinate Geometry IIC goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - IAH</h2><hr><p>Custom code for Coordinate Geometry IAH goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - EIC</h2><hr><p>Custom code for Coordinate Geometry EIC goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - EAH</h2><hr><p>Custom code for Coordinate Geometry EAH goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - PIC</h2><hr><p>Custom code for Coordinate Geometry PIC goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - PAH</h2><hr><p>Custom code for Coordinate Geometry PAH goes here.</p></section></div>
+        <div id="page-dr-m1-coordinate-geometry-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-coordinate-geometry">← Back</button><h2>DR: Coordinate Geometry - VIRTUE</h2><hr><p>Custom code for Coordinate Geometry VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m1-matrices-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - Synopsis</h2><hr><p>Custom code for Matrices Synopsis goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - IIC</h2><hr><p>Custom code for Matrices IIC goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - IAH</h2><hr><p>Custom code for Matrices IAH goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - EIC</h2><hr><p>Custom code for Matrices EIC goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - EAH</h2><hr><p>Custom code for Matrices EAH goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - PIC</h2><hr><p>Custom code for Matrices PIC goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - PAH</h2><hr><p>Custom code for Matrices PAH goes here.</p></section></div>
+        <div id="page-dr-m1-matrices-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m1-matrices">← Back</button><h2>DR: Matrices - VIRTUE</h2><hr><p>Custom code for Matrices VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m2-relations-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - Synopsis</h2><hr><p>Custom code for Relations Synopsis goes here.</p></section></div>
+        <div id="page-dr-m2-relations-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - IIC</h2><hr><p>Custom code for Relations IIC goes here.</p></section></div>
+        <div id="page-dr-m2-relations-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - IAH</h2><hr><p>Custom code for Relations IAH goes here.</p></section></div>
+        <div id="page-dr-m2-relations-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - EIC</h2><hr><p>Custom code for Relations EIC goes here.</p></section></div>
+        <div id="page-dr-m2-relations-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - EAH</h2><hr><p>Custom code for Relations EAH goes here.</p></section></div>
+        <div id="page-dr-m2-relations-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - PIC</h2><hr><p>Custom code for Relations PIC goes here.</p></section></div>
+        <div id="page-dr-m2-relations-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - PAH</h2><hr><p>Custom code for Relations PAH goes here.</p></section></div>
+        <div id="page-dr-m2-relations-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-relations">← Back</button><h2>DR: Relations - VIRTUE</h2><hr><p>Custom code for Relations VIRTUE goes here.</p></section></div>
+
+        <div id="page-dr-m2-quadratic-expressions-equations-synopsis" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - Synopsis</h2><hr><p>Custom code for Quadratic Expressions and Equations Synopsis goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-iic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - IIC</h2><hr><p>Custom code for Quadratic Expressions and Equations IIC goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-iah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - IAH</h2><hr><p>Custom code for Quadratic Expressions and Equations IAH goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-eic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - EIC</h2><hr><p>Custom code for Quadratic Expressions and Equations EIC goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-eah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - EAH</h2><hr><p>Custom code for Quadratic Expressions and Equations EAH goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-pic" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - PIC</h2><hr><p>Custom code for Quadratic Expressions and Equations PIC goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-pah" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - PAH</h2><hr><p>Custom code for Quadratic Expressions and Equations PAH goes here.</p></section></div>
+        <div id="page-dr-m2-quadratic-expressions-equations-virtue" class="page"><section class="card"><button class="back-button nav-link" data-page="dr-m2-quadratic-expressions-equations">← Back</button><h2>DR: Quadratic Expressions and Equations - VIRTUE</h2><hr><p>Custom code for Quadratic Expressions and Equations VIRTUE goes here.</p></section></div>
     </main>
 
     <footer class="main-footer">
         <p>&copy; 2025 Academic Assistant. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript is embedded directly inside the HTML file -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
@@ -770,7 +1090,7 @@ int main() {
                     const linkPage = link.getAttribute('data-page');
                     if (linkPage === pageId || 
                         (linkPage === 'iit' && (pageId.startsWith('csr-') || pageId.startsWith('dr-'))) ||
-                        (linkPage === 'home' && (pageId === 'home' || pageId.startsWith('custom-section-') || pageId.startsWith('aptitude-') || pageId.startsWith('programming-')))
+                        (linkPage === 'home' && (pageId === 'home'))
                         ) {
                         link.classList.add('active');
                     }
